@@ -52,7 +52,7 @@ export const SecaoInicio: React.FC = () => {
             <div className="relative">
               <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1622169804256-0eb6873ff441?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMGRldmVsb3BlcnxlbnwxfHx8fDE3NTY3MTgwOTh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://i.imgur.com/WdRslU7.png"
                   alt="Foto de perfil profissional"
                   className="w-full h-full object-cover"
                 />
@@ -76,13 +76,13 @@ export const SecaoInicio: React.FC = () => {
                 variants={animacaoItem}
                 className="text-4xl lg:text-5xl font-bold mb-4"
               >
-                João Silva
+                Lizandra Santos
               </motion.h1>
               <motion.p 
                 variants={animacaoItem}
                 className="text-xl text-muted-foreground mb-6"
               >
-                Desenvolvedor Full Stack
+                Desenvolvedora de Software
               </motion.p>
             </div>
 
@@ -92,22 +92,22 @@ export const SecaoInicio: React.FC = () => {
                 <MapPin size={16} />
                 <span>São Paulo, Brasil</span>
               </div>
-              <div className="flex items-center gap-2">
+              {/* <div className="flex items-center gap-2">
                 <Calendar size={16} />
-                <span>5+ anos de experiência</span>
-              </div>
+                <span>2+ anos de experiência</span>
+              </div> */}
             </motion.div>
 
             {/* Descrição */}
             <motion.div variants={animacaoItem} className="space-y-4">
               <p className="text-lg leading-relaxed">
-                Desenvolvedor apaixonado por criar soluções digitais inovadoras e experiências 
-                de usuário excepcionais. Especializado em React, Node.js e tecnologias modernas 
-                de desenvolvimento web.
+                Desenvolvimento de Software | <br></br>Automação de Processos
               </p>
               <p className="text-muted-foreground">
-                Sempre em busca de novos desafios e oportunidades para crescer profissionalmente, 
-                contribuindo com projetos que fazem a diferença na vida das pessoas.
+                Apaixonada por tecnologia, atuo com foco em desenvolvimento de software e automação de processos, ajudando empresas a otimizar operações e ganhar eficiência.
+                Minha vivência em ambientes operacionais, combinada com conhecimento técnico, me permite entender rapidamente sistemas e propor soluções práticas, 
+                liberando tempo para atividades estratégicas e de maior impacto financeiro.
+
               </p>
             </motion.div>
 
@@ -140,7 +140,7 @@ export const SecaoInicio: React.FC = () => {
             {/* Links sociais */}
             <motion.div variants={animacaoItem} className="flex gap-4 pt-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/lizandra-ribeiro-p-santos/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg border border-border hover:bg-accent transition-colors"
@@ -149,7 +149,7 @@ export const SecaoInicio: React.FC = () => {
                 <Linkedin size={24} />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/LizaGomes97"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg border border-border hover:bg-accent transition-colors"
@@ -158,7 +158,7 @@ export const SecaoInicio: React.FC = () => {
                 <Github size={24} />
               </a>
               <a
-                href="mailto:contato@exemplo.com"
+                href="mailto:lizandraplacido@gmail.com"
                 className="p-3 rounded-lg border border-border hover:bg-accent transition-colors"
                 aria-label="Enviar e-mail"
               >

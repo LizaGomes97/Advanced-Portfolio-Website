@@ -28,7 +28,7 @@ export const SecaoCertificados: React.FC = () => {
       titulo: 'AWS Certified Developer - Associate',
       instituicao: 'Amazon Web Services',
       dataObtencao: 'Janeiro 2024',
-      dataVencimento: 'Janeiro 2027',
+      dataVencimento: '',
       descricao: 'Certificação que valida as habilidades técnicas para desenvolver e manter aplicações na plataforma AWS.',
       tecnologias: ['AWS Lambda', 'EC2', 'S3', 'DynamoDB', 'API Gateway'],
       credencial: 'AWS-CDA-12345',

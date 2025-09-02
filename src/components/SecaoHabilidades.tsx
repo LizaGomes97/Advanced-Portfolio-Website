@@ -20,35 +20,35 @@ export const SecaoHabilidades: React.FC = () => {
     frontend: [
       {
         nome: 'React / Next.js',
-        nivel: 95,
+        nivel: 45,
         categoria: 'frontend',
         icone: <Code size={24} />,
         descricao: 'Desenvolvimento de aplicações modernas com React, hooks, context API e Next.js para SSR/SSG.'
       },
       {
         nome: 'TypeScript',
-        nivel: 90,
+        nivel: 45,
         categoria: 'frontend',
         icone: <Code size={24} />,
         descricao: 'Tipagem estática para JavaScript, interfaces, generics e desenvolvimento type-safe.'
       },
       {
         nome: 'HTML5 / CSS3',
-        nivel: 95,
+        nivel: 75,
         categoria: 'frontend',
         icone: <Globe size={24} />,
         descricao: 'Marcação semântica, acessibilidade, CSS Grid, Flexbox e animações CSS.'
       },
       {
         nome: 'Tailwind CSS',
-        nivel: 88,
+        nivel: 30,
         categoria: 'frontend',
         icone: <Palette size={24} />,
         descricao: 'Framework CSS utility-first para criação rápida de interfaces responsivas.'
       },
       {
         nome: 'Vue.js',
-        nivel: 75,
+        nivel: 30,
         categoria: 'frontend',
         icone: <Code size={24} />,
         descricao: 'Framework progressivo para construção de interfaces de usuário interativas.'
@@ -57,17 +57,10 @@ export const SecaoHabilidades: React.FC = () => {
     backend: [
       {
         nome: 'Node.js',
-        nivel: 90,
+        nivel: 45,
         categoria: 'backend',
         icone: <Server size={24} />,
         descricao: 'Desenvolvimento de APIs REST, GraphQL e aplicações server-side com JavaScript.'
-      },
-      {
-        nome: 'Express.js',
-        nivel: 85,
-        categoria: 'backend',
-        icone: <Server size={24} />,
-        descricao: 'Framework web minimalista para Node.js, middleware e roteamento.'
       },
       {
         nome: 'Python',
@@ -78,53 +71,32 @@ export const SecaoHabilidades: React.FC = () => {
       },
       {
         nome: 'PostgreSQL',
-        nivel: 85,
+        nivel: 30,
         categoria: 'backend',
         icone: <Database size={24} />,
         descricao: 'Banco de dados relacional avançado, queries complexas e otimização.'
       },
-      {
-        nome: 'MongoDB',
-        nivel: 78,
-        categoria: 'backend',
-        icone: <Database size={24} />,
-        descricao: 'Banco de dados NoSQL, agregações e design de esquemas flexíveis.'
-      }
     ],
     mobile: [
       {
         nome: 'React Native',
-        nivel: 82,
+        nivel: 30,
         categoria: 'mobile',
         icone: <Smartphone size={24} />,
         descricao: 'Desenvolvimento de aplicativos nativos para iOS e Android.'
       },
-      {
-        nome: 'Flutter',
-        nivel: 70,
-        categoria: 'mobile',
-        icone: <Smartphone size={24} />,
-        descricao: 'Framework do Google para criar apps nativos multiplataforma.'
-      },
-      {
-        nome: 'Expo',
-        nivel: 85,
-        categoria: 'mobile',
-        icone: <Smartphone size={24} />,
-        descricao: 'Plataforma para desenvolver, construir e publicar apps React Native.'
-      }
     ],
     devops: [
       {
         nome: 'Docker',
-        nivel: 75,
+        nivel: 30,
         categoria: 'devops',
         icone: <Server size={24} />,
         descricao: 'Containerização de aplicações e orquestração com Docker Compose.'
       },
       {
         nome: 'AWS',
-        nivel: 70,
+        nivel: 30,
         categoria: 'devops',
         icone: <Server size={24} />,
         descricao: 'Serviços de nuvem: EC2, S3, Lambda, RDS e deployment automatizado.'
@@ -136,13 +108,6 @@ export const SecaoHabilidades: React.FC = () => {
         icone: <Code size={24} />,
         descricao: 'Controle de versão, branching strategies e CI/CD com GitHub Actions.'
       },
-      {
-        nome: 'Linux',
-        nivel: 80,
-        categoria: 'devops',
-        icone: <Server size={24} />,
-        descricao: 'Administração de servidores, shell scripting e automação.'
-      }
     ]
   };
 
@@ -273,15 +238,15 @@ export const SecaoHabilidades: React.FC = () => {
         >
           <div className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="bg-card p-6 rounded-xl shadow-lg border border-border">
-              <div className="text-3xl font-bold text-primary mb-2">5+</div>
+              <div className="text-3xl font-bold text-primary mb-2">2+</div>
               <div className="text-muted-foreground">Anos de Experiência</div>
             </div>
             <div className="bg-card p-6 rounded-xl shadow-lg border border-border">
-              <div className="text-3xl font-bold text-primary mb-2">20+</div>
+              <div className="text-3xl font-bold text-primary mb-2">5+</div>
               <div className="text-muted-foreground">Tecnologias Dominadas</div>
             </div>
             <div className="bg-card p-6 rounded-xl shadow-lg border border-border">
-              <div className="text-3xl font-bold text-primary mb-2">50+</div>
+              <div className="text-3xl font-bold text-primary mb-2">5+</div>
               <div className="text-muted-foreground">Projetos Concluídos</div>
             </div>
           </div>

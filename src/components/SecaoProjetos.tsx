@@ -10,20 +10,20 @@ export const SecaoProjetos: React.FC = () => {
   const [modalAberto, setModalAberto] = useState(false);
   const [filtroAtivo, setFiltroAtivo] = useState('todos');
 
-  // Dados dos projetos (simulado)
+  // Dados dos projetos
   const projetos: DadosProjeto[] = [
     {
       id: '1',
-      titulo: 'E-commerce Moderno',
-      descricao: 'Plataforma completa de e-commerce com React, Node.js e PostgreSQL.',
-      descricaoCompleta: 'Uma plataforma de e-commerce completa desenvolvida com as tecnologias mais modernas do mercado. O projeto incluiu desenvolvimento front-end com React, back-end com Node.js e Express, banco de dados PostgreSQL, sistema de autenticação JWT, integração com gateway de pagamento e painel administrativo completo.',
-      tecnologias: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
-      imagem: 'https://images.unsplash.com/photo-1641567535859-c58187ac4954?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBhcHBsaWNhdGlvbiUyMGludGVyZmFjZXxlbnwxfHx8fDE3NTY3MDY0ODd8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      linkGithub: 'https://github.com',
-      linkDemo: 'https://demo.exemplo.com',
-      dataInicio: 'Jan 2024',
-      dataFim: 'Mar 2024',
-      equipe: ['João Silva', 'Maria Santos'],
+      titulo: 'E-commerce Tabacaria',
+      descricao: 'Plataforma completa de e-commerce com HTML, Python e CSS',
+      descricaoCompleta: 'Estrutura inicial de um site e-commerce para comercialização de itens de tabacaria. Utilizei o Django para facilitar a introdução do usuário admin para configuração e atualização do site.',
+      tecnologias: ['HTML', 'Python', 'CSS'],
+      imagem: 'https://i.imgur.com/vgSH4s7.png',
+      linkGithub: 'https://github.com/LizaGomes97/tabacaria_oriente',
+      linkDemo: 'https://github.com/LizaGomes97/tabacaria_oriente',
+      dataInicio: '2025',
+      dataFim: '2025',
+      equipe: ['Lizandra Santos'],
       desafios: [
         'Implementar sistema de pagamento seguro',
         'Otimizar performance para grandes volumes de dados',
@@ -37,16 +37,16 @@ export const SecaoProjetos: React.FC = () => {
     },
     {
       id: '2',
-      titulo: 'App Mobile Fitness',
-      descricao: 'Aplicativo de fitness com treinos personalizados e tracking de progresso.',
-      descricaoCompleta: 'Aplicativo mobile desenvolvido em React Native para auxiliar usuários em seus treinos de fitness. Inclui sistema de criação de treinos personalizados, tracking de progresso, integração com dispositivos wearables e gamificação para motivar os usuários.',
-      tecnologias: ['React Native', 'Firebase', 'TypeScript', 'Redux'],
-      imagem: 'https://images.unsplash.com/photo-1678667720699-5c0fc04ac166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXNpZ24lMjBtb2NrdXB8ZW58MXx8fHwxNzU2NzEzMjgzfDA&ixlib=rb-4.1.0&q=80&w=1080',
-      linkGithub: 'https://github.com',
-      linkDemo: 'https://demo.exemplo.com',
-      dataInicio: 'Jun 2023',
-      dataFim: 'Set 2023',
-      equipe: ['João Silva'],
+      titulo: 'ChatBot Whatsapp',
+      descricao: 'Bot para autoatendimento',
+      descricaoCompleta: 'Automação de atendimento com triagem inteligente. O bot realizava a saudação inicial ao cliente e posteriormente perguntava se o mesmo gostaria de informar o CPF, de acordo com a resposta ele prosseguia o atendimento seguindo o caminho esperado até o momento de passar o atendimento para uma pessoa física.',
+      tecnologias: ['Python'],
+      imagem: 'https://i.imgur.com/SCDcxNF.png',
+      linkGithub: 'https://github.com/LizaGomes97/ChatBot',
+      linkDemo: 'https://github.com/LizaGomes97/ChatBot',
+      dataInicio: '2025',
+      dataFim: '2025',
+      equipe: ['Lizandra Santos'],
       desafios: [
         'Sincronização offline de dados',
         'Integração com dispositivos wearables',
@@ -60,16 +60,16 @@ export const SecaoProjetos: React.FC = () => {
     },
     {
       id: '3',
-      titulo: 'Dashboard Analytics',
+      titulo: 'Chatbot de Counter Strike',
       descricao: 'Dashboard interativo para visualização de dados e métricas em tempo real.',
-      descricaoCompleta: 'Dashboard profissional desenvolvido para visualização de dados e analytics em tempo real. Utiliza gráficos interativos, filtros avançados, exportação de relatórios e atualizações em tempo real via WebSocket.',
-      tecnologias: ['Vue.js', 'D3.js', 'Node.js', 'MongoDB', 'Socket.io'],
-      imagem: 'https://images.unsplash.com/photo-1719400471588-575b23e27bd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkZXZlbG9wZXIlMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzU2Njc4ODYwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-      linkGithub: 'https://github.com',
-      linkDemo: 'https://demo.exemplo.com',
-      dataInicio: 'Out 2023',
-      dataFim: 'Dez 2023',
-      equipe: ['João Silva', 'Pedro Costa', 'Ana Lima'],
+      descricaoCompleta: 'Chat criado para fãs do jogo obterem informações sobre mapas, armas e outras modalidades. Foi desenvolvido como parte de um desafio da Furia.',
+      tecnologias: ['Python', 'CSS', 'HTML','JavaScript','Dockerfile'],
+      imagem: 'https://i.imgur.com/u3AfGNG.png',
+      linkGithub: 'https://github.com/LizaGomes97/CS_chatbot',
+      linkDemo: 'https://cs-chatbot-cool-flower-8000.fly.dev/',
+      dataInicio: '2025',
+      dataFim: '2025',
+      equipe: ['Lizandra Santos'],
       desafios: [
         'Processamento de grandes volumes de dados',
         'Visualizações interativas em tempo real',
@@ -80,7 +80,7 @@ export const SecaoProjetos: React.FC = () => {
         'Aumento de 85% na tomada de decisões baseadas em dados',
         'Interface utilizando por mais de 500 usuários diários'
       ]
-    }
+    },
   ];
 
   // Categorias para filtro
@@ -88,15 +88,15 @@ export const SecaoProjetos: React.FC = () => {
     { id: 'todos', label: 'Todos os Projetos' },
     { id: 'web', label: 'Web Development' },
     { id: 'mobile', label: 'Mobile Apps' },
-    { id: 'dashboard', label: 'Dashboards' }
+    { id: 'bots', label: "Bot's" }
   ];
 
   // Filtrar projetos baseado na categoria
   const projetosFiltrados = projetos.filter(projeto => {
     if (filtroAtivo === 'todos') return true;
-    if (filtroAtivo === 'web') return projeto.tecnologias.some(tech => ['React', 'Vue.js', 'Node.js'].includes(tech));
+    if (filtroAtivo === 'web') return projeto.tecnologias.some(tech => ['HTML', 'CSS'].includes(tech));
     if (filtroAtivo === 'mobile') return projeto.tecnologias.includes('React Native');
-    if (filtroAtivo === 'dashboard') return projeto.titulo.toLowerCase().includes('dashboard');
+    if (filtroAtivo === 'bots') return projeto.titulo.toLowerCase().includes('bot');
     return true;
   });
 
