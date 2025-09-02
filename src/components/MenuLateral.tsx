@@ -141,7 +141,7 @@ export const MenuLateral: React.FC<MenuLateralProps> = ({ secaoAtiva }) => {
           {/* Links sociais */}
           <div className="flex justify-center gap-4">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/lizandra-ribeiro-p-santos/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-lg hover:bg-accent transition-colors"
@@ -150,7 +150,7 @@ export const MenuLateral: React.FC<MenuLateralProps> = ({ secaoAtiva }) => {
               <Linkedin size={20} />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/LizaGomes97"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-lg hover:bg-accent transition-colors"
@@ -159,7 +159,7 @@ export const MenuLateral: React.FC<MenuLateralProps> = ({ secaoAtiva }) => {
               <Github size={20} />
             </a>
             <a
-              href="mailto:contato@exemplo.com"
+              href="mailto:lizandraplacido@gmail.com"
               className="p-3 rounded-lg hover:bg-accent transition-colors"
               aria-label="E-mail"
             >

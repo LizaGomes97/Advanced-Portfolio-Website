@@ -71,9 +71,9 @@ const PortfolioApp: React.FC = () => {
               
               {/* Informações pessoais */}
               <div>
-                <h3 className="text-lg font-semibold mb-4">João Silva</h3>
+                <h3 className="text-lg font-semibold mb-4">Lizandra Santos</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Desenvolvedor Full Stack apaixonado por criar soluções digitais 
+                  Desenvolvedora de Software apaixonado por criar soluções digitais 
                   inovadoras e experiências de usuário excepcionais.
                 </p>
               </div>
@@ -111,18 +111,18 @@ const PortfolioApp: React.FC = () => {
                   <p>São Paulo, SP - Brasil</p>
                   <p>
                     <a 
-                      href="mailto:joao.silva@exemplo.com"
+                      href="mailto:lizandraplacido@gmail.com"
                       className="hover:text-primary transition-colors"
                     >
-                      joao.silva@exemplo.com
+                      lizandraplacido@gmail.com
                     </a>
                   </p>
                   <p>
                     <a 
-                      href="tel:+5511999887766"
+                      href="tel:+5511915959763"
                       className="hover:text-primary transition-colors"
                     >
-                      +55 (11) 99988-7766
+                      +55 (11) 91595-9763
                     </a>
                   </p>
                 </div>
@@ -133,7 +133,7 @@ const PortfolioApp: React.FC = () => {
             <div className="border-t border-border mt-8 pt-8">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
                 <p>
-                  © 2024 João Silva. Todos os direitos reservados.
+                  © 2025 Lizandra Santos. Todos os direitos reservados.
                 </p>
                 <p>
                   Desenvolvido com React, TypeScript e Tailwind CSS

@@ -163,10 +163,10 @@ export const SecaoContato: React.FC = () => {
                   <div>
                     <p className="font-medium">E-mail</p>
                     <a 
-                      href="mailto:joao.silva@exemplo.com" 
+                      href="mailto:lizandraplacido@gmail.com" 
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      joao.silva@exemplo.com
+                      lizandraplacido@gmail.com
                     </a>
                   </div>
                 </div>
@@ -178,10 +178,10 @@ export const SecaoContato: React.FC = () => {
                   <div>
                     <p className="font-medium">Telefone</p>
                     <a 
-                      href="tel:+5511999887766" 
+                      href="tel:+5511915959763" 
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      +55 (11) 99988-7766
+                      +55 (11) 91595-9763
                     </a>
                   </div>
                 </div>
@@ -203,7 +203,7 @@ export const SecaoContato: React.FC = () => {
               <h4 className="text-lg font-semibold mb-4">Redes Sociais</h4>
               <div className="flex gap-4">
                 <a
-                  href="https://linkedin.com/in/joaosilva"
+                  href="https://www.linkedin.com/in/lizandra-ribeiro-p-santos/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-card border border-border rounded-lg hover:bg-accent 
@@ -214,7 +214,7 @@ export const SecaoContato: React.FC = () => {
                 </a>
                 
                 <a
-                  href="https://github.com/joaosilva"
+                  href="https://github.com/LizaGomes97"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-card border border-border rounded-lg hover:bg-accent 
@@ -224,7 +224,7 @@ export const SecaoContato: React.FC = () => {
                   <Github size={24} className="group-hover:text-primary transition-colors" />
                 </a>
                 
-                <a
+                {/* <a
                   href="https://twitter.com/joaosilva"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -233,7 +233,7 @@ export const SecaoContato: React.FC = () => {
                   aria-label="Twitter"
                 >
                   <Twitter size={24} className="group-hover:text-primary transition-colors" />
-                </a>
+                </a> */}
               </div>
             </div>
 

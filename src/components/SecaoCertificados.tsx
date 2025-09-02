@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Award, ExternalLink, Calendar, CheckCircle } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import certificados from '../data/certificados.json';
 
 // Tipo para certificado
 interface Certificado {
@@ -20,61 +21,6 @@ interface Certificado {
 
 // Componente da seção de certificados
 export const SecaoCertificados: React.FC = () => {
-  
-  // Dados dos certificados (simulado)
-  const certificados: Certificado[] = [
-    {
-      id: '1',
-      titulo: 'AWS Certified Developer - Associate',
-      instituicao: 'Amazon Web Services',
-      dataObtencao: 'Janeiro 2024',
-      dataVencimento: '',
-      descricao: 'Certificação que valida as habilidades técnicas para desenvolver e manter aplicações na plataforma AWS.',
-      tecnologias: ['AWS Lambda', 'EC2', 'S3', 'DynamoDB', 'API Gateway'],
-      credencial: 'AWS-CDA-12345',
-      linkVerificacao: 'https://aws.amazon.com/verification',
-      imagem: 'https://images.unsplash.com/photo-1719400471588-575b23e27bd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkZXZlbG9wZXIlMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzU2Njc4ODYwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-      ativo: true
-    },
-    {
-      id: '2',
-      titulo: 'Meta Front-End Developer Professional',
-      instituicao: 'Meta / Coursera',
-      dataObtencao: 'Novembro 2023',
-      descricao: 'Programa profissional abrangente cobrindo React, JavaScript avançado, UX/UI design e desenvolvimento front-end moderno.',
-      tecnologias: ['React', 'JavaScript', 'HTML/CSS', 'Figma', 'UX Design'],
-      credencial: 'META-FE-67890',
-      linkVerificacao: 'https://coursera.org/verify',
-      imagem: 'https://images.unsplash.com/photo-1641567535859-c58187ac4954?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBhcHBsaWNhdGlvbiUyMGludGVyZmFjZXxlbnwxfHx8fDE3NTY3MDY0ODd8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      ativo: true
-    },
-    {
-      id: '3',
-      titulo: 'Google Cloud Professional Developer',
-      instituicao: 'Google Cloud',
-      dataObtencao: 'Setembro 2023',
-      dataVencimento: 'Setembro 2025',
-      descricao: 'Certificação que demonstra proficiência em design, construção e deployment de aplicações na Google Cloud Platform.',
-      tecnologias: ['GCP', 'Cloud Functions', 'Cloud Storage', 'BigQuery', 'Kubernetes'],
-      credencial: 'GCP-PD-11111',
-      linkVerificacao: 'https://cloud.google.com/certification',
-      imagem: 'https://images.unsplash.com/photo-1678667720699-5c0fc04ac166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXNpZ24lMjBtb2NrdXB8ZW58MXx8fHwxNzU2NzEzMjgzfDA&ixlib=rb-4.1.0&q=80&w=1080',
-      ativo: true
-    },
-    {
-      id: '4',
-      titulo: 'Scrum Master Certified (SMC)',
-      instituicao: 'Scrum Alliance',
-      dataObtencao: 'Junho 2023',
-      dataVencimento: 'Junho 2025',
-      descricao: 'Certificação em metodologias ágeis e gestão de projetos usando framework Scrum.',
-      tecnologias: ['Scrum', 'Agile', 'Project Management', 'Team Leadership'],
-      credencial: 'SMC-22222',
-      linkVerificacao: 'https://scrumalliance.org/verify',
-      imagem: 'https://images.unsplash.com/photo-1622169804256-0eb6873ff441?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMGRldmVsb3BlcnxlbnwxfHx8fDE3NTY3MTgwOTh8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      ativo: true
-    }
-  ];
 
   // Verificar se certificado está próximo do vencimento
   const verificarVencimento = (dataVencimento: string | undefined): boolean => {
@@ -138,7 +84,7 @@ export const SecaoCertificados: React.FC = () => {
             <div className="flex justify-center mb-3">
               <Calendar className="w-8 h-8 text-orange-500" />
             </div>
-            <div className="text-3xl font-bold text-orange-500 mb-2">2024</div>
+            <div className="text-3xl font-bold text-orange-500 mb-2">2025</div>
             <div className="text-muted-foreground">Última Obtida</div>
           </div>
         </motion.div>
@@ -259,8 +205,8 @@ export const SecaoCertificados: React.FC = () => {
             para me manter atualizado com as melhores práticas do mercado.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-            <span>📚 Próxima meta: React Native Certification</span>
-            <span>🎯 Meta 2024: 2 novas certificações</span>
+            <span>📚 Próxima meta: Totvs Protheus</span>
+            <span>🎯 Meta 2026: Inglês Avançado</span>
           </div>
         </motion.div>
       </div>
