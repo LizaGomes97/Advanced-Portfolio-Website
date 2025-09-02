@@ -10,7 +10,7 @@ export const SecaoProjetos: React.FC = () => {
   const [modalAberto, setModalAberto] = useState(false);
   const [filtroAtivo, setFiltroAtivo] = useState('todos');
 
-  // Dados dos projetos
+  // Dados dos projetos com a nova estrutura
   const projetos: DadosProjeto[] = [
     {
       id: '1',
@@ -20,20 +20,7 @@ export const SecaoProjetos: React.FC = () => {
       tecnologias: ['HTML', 'Python', 'CSS'],
       imagem: 'https://i.imgur.com/vgSH4s7.png',
       linkGithub: 'https://github.com/LizaGomes97/tabacaria_oriente',
-      linkDemo: 'https://github.com/LizaGomes97/tabacaria_oriente',
-      dataInicio: '2025',
-      dataFim: '2025',
-      equipe: ['Lizandra Santos'],
-      desafios: [
-        'Implementar sistema de pagamento seguro',
-        'Otimizar performance para grandes volumes de dados',
-        'Criar interface responsiva para todos os dispositivos'
-      ],
-      resultados: [
-        'Aumento de 40% nas conversões',
-        'Redução de 60% no tempo de carregamento',
-        'Interface 100% responsiva e acessível'
-      ]
+      linkDemo: 'https://github.com/LizaGomes97/tabacaria_oriente'
     },
     {
       id: '2',
@@ -43,20 +30,7 @@ export const SecaoProjetos: React.FC = () => {
       tecnologias: ['Python'],
       imagem: 'https://i.imgur.com/SCDcxNF.png',
       linkGithub: 'https://github.com/LizaGomes97/ChatBot',
-      linkDemo: 'https://github.com/LizaGomes97/ChatBot',
-      dataInicio: '2025',
-      dataFim: '2025',
-      equipe: ['Lizandra Santos'],
-      desafios: [
-        'Sincronização offline de dados',
-        'Integração com dispositivos wearables',
-        'Otimização de performance em dispositivos antigos'
-      ],
-      resultados: [
-        'Mais de 10.000 downloads na primeira semana',
-        'Avaliação 4.8/5 nas lojas de aplicativos',
-        'Redução de 50% no abandono de treinos'
-      ]
+      linkDemo: 'https://github.com/LizaGomes97/ChatBot'
     },
     {
       id: '3',
@@ -66,21 +40,8 @@ export const SecaoProjetos: React.FC = () => {
       tecnologias: ['Python', 'CSS', 'HTML','JavaScript','Dockerfile'],
       imagem: 'https://i.imgur.com/u3AfGNG.png',
       linkGithub: 'https://github.com/LizaGomes97/CS_chatbot',
-      linkDemo: 'https://cs-chatbot-cool-flower-8000.fly.dev/',
-      dataInicio: '2025',
-      dataFim: '2025',
-      equipe: ['Lizandra Santos'],
-      desafios: [
-        'Processamento de grandes volumes de dados',
-        'Visualizações interativas em tempo real',
-        'Interface intuitiva para usuários não técnicos'
-      ],
-      resultados: [
-        'Redução de 70% no tempo de análise de dados',
-        'Aumento de 85% na tomada de decisões baseadas em dados',
-        'Interface utilizando por mais de 500 usuários diários'
-      ]
-    },
+      linkDemo: 'https://cs-chatbot-cool-flower-8000.fly.dev/'
+    }
   ];
 
   // Categorias para filtro

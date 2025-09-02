@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { X, Github, ExternalLink, Calendar, Users } from 'lucide-react';
+import { X, Github, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
-// Tipo para os dados do projeto
+// Tipo para os dados do projeto (atualizado)
 export interface DadosProjeto {
   id: string;
   titulo: string;
@@ -13,11 +13,6 @@ export interface DadosProjeto {
   imagem: string;
   linkGithub: string;
   linkDemo: string;
-  dataInicio: string;
-  dataFim: string;
-  equipe: string[];
-  desafios: string[];
-  resultados: string[];
 }
 
 interface ModalProjetoProps {
@@ -128,29 +123,6 @@ export const ModalProjeto: React.FC<ModalProjetoProps> = ({
                   </div>
                 </div>
 
-                {/* Informações do projeto */}
-                <div className="grid lg:grid-cols-3 gap-6 mb-8">
-                  <div className="flex items-center gap-3 text-muted-foreground">
-                    <Calendar size={20} />
-                    <div>
-                      <p className="text-sm">Período</p>
-                      <p className="font-medium text-foreground">
-                        {projeto.dataInicio} - {projeto.dataFim}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-3 text-muted-foreground">
-                    <Users size={20} />
-                    <div>
-                      <p className="text-sm">Equipe</p>
-                      <p className="font-medium text-foreground">
-                        {projeto.equipe.length} pessoa{projeto.equipe.length > 1 ? 's' : ''}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Descrição completa */}
                 <div className="mb-8">
                   <h3 className="text-xl font-semibold mb-4">Sobre o Projeto</h3>
@@ -174,31 +146,6 @@ export const ModalProjeto: React.FC<ModalProjetoProps> = ({
                   </div>
                 </div>
 
-                {/* Desafios */}
-                <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-4">Principais Desafios</h3>
-                  <ul className="space-y-2">
-                    {projeto.desafios.map((desafio, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                        <span className="text-muted-foreground">{desafio}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Resultados */}
-                <div>
-                  <h3 className="text-xl font-semibold mb-4">Resultados Alcançados</h3>
-                  <ul className="space-y-2">
-                    {projeto.resultados.map((resultado, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
-                        <span className="text-muted-foreground">{resultado}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             </motion.div>
           </motion.div>

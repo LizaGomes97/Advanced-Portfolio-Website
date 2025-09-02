@@ -20,7 +20,7 @@ export const SecaoHabilidades: React.FC = () => {
     frontend: [
       {
         nome: 'React / Next.js',
-        nivel: 45,
+        nivel: 60,
         categoria: 'frontend',
         icone: <Code size={24} />,
         descricao: 'Desenvolvimento de aplicações modernas com React, hooks, context API e Next.js para SSR/SSG.'
@@ -57,7 +57,7 @@ export const SecaoHabilidades: React.FC = () => {
     backend: [
       {
         nome: 'Node.js',
-        nivel: 45,
+        nivel: 70,
         categoria: 'backend',
         icone: <Server size={24} />,
         descricao: 'Desenvolvimento de APIs REST, GraphQL e aplicações server-side com JavaScript.'

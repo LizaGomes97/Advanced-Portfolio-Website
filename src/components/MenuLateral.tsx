@@ -45,14 +45,17 @@ export const MenuLateral: React.FC<MenuLateralProps> = ({ secaoAtiva }) => {
     setMenuAberto(false);
   };
 
-  // Função para baixar currículo (simulado)
+  // Função para baixar o currículo em PDF
   const baixarCurriculo = () => {
-    // Simular download do currículo
+    const googleDocUrl = "https://docs.google.com/document/d/1vkECN2StZ2VWYzmdebCsjhkjcybZ5PGkqFUs4qY1rlQ/export?format=pdf";
+    
+    // Cria um link temporário e simula o clique para iniciar o download
     const link = document.createElement('a');
-    link.href = '#';
-    link.download = 'curriculo.pdf';
+    link.href = googleDocUrl;
+    link.setAttribute('download', 'Curriculo_Lizandra_Santos.pdf'); // Nome do arquivo que será salvo
+    document.body.appendChild(link);
     link.click();
-    alert('Download do currículo iniciado!');
+    document.body.removeChild(link);
   };
 
   return (

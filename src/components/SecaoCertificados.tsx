@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Award, ExternalLink, Calendar, CheckCircle } from 'lucide-react';
+import { Award, ExternalLink, Calendar, CheckCircle, ChevronDown } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import certificados from '../data/certificados.json';
+import { Button } from './ui/button'; // Importando o componente de botão
 
 // Tipo para certificado
 interface Certificado {
@@ -19,14 +20,22 @@ interface Certificado {
   ativo: boolean;
 }
 
+const ITENS_POR_PAGINA = 4;
+
 // Componente da seção de certificados
 export const SecaoCertificados: React.FC = () => {
+  const [itensVisiveis, setItensVisiveis] = useState(ITENS_POR_PAGINA);
+
+  const certificadosVisiveis = certificados.slice(0, itensVisiveis);
+
+  const carregarMais = () => {
+    setItensVisiveis(prev => prev + ITENS_POR_PAGINA);
+  };
 
   // Verificar se certificado está próximo do vencimento
   const verificarVencimento = (dataVencimento: string | undefined): boolean => {
     if (!dataVencimento) return false;
     
-    // Simular verificação de vencimento (30 dias)
     const hoje = new Date();
     const vencimento = new Date(dataVencimento);
     const diffTempo = vencimento.getTime() - hoje.getTime();
@@ -91,7 +100,7 @@ export const SecaoCertificados: React.FC = () => {
 
         {/* Grid de certificados */}
         <div className="grid md:grid-cols-2 gap-8">
-          {certificados.map((certificado, index) => (
+          {certificadosVisiveis.map((certificado, index) => (
             <motion.div
               key={certificado.id}
               initial={{ opacity: 0, y: 20 }}
@@ -190,6 +199,20 @@ export const SecaoCertificados: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Botão Ver mais */}
+        {itensVisiveis < certificados.length && (
+          <div className="text-center mt-12">
+            <Button
+              variant="outline"
+              onClick={carregarMais}
+              className="group"
+            >
+              Ver mais
+              <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
+            </Button>
+          </div>
+        )}
 
         {/* Call to action */}
         <motion.div 

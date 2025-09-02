@@ -6,9 +6,18 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 // Componente da seção inicial/sobre
 export const SecaoInicio: React.FC = () => {
   
-  // Função para simular download do currículo
+
+  // Função para baixar o currículo em PDF
   const baixarCurriculo = () => {
-    alert('Download do currículo iniciado!');
+    const googleDocUrl = "https://docs.google.com/document/d/1vkECN2StZ2VWYzmdebCsjhkjcybZ5PGkqFUs4qY1rlQ/export?format=pdf";
+    
+    // Cria um link temporário e simula o clique para iniciar o download
+    const link = document.createElement('a');
+    link.href = googleDocUrl;
+    link.setAttribute('download', 'Curriculo_Lizandra_Santos.pdf'); // Nome do arquivo que será salvo
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   // Animações para entrada dos elementos
@@ -101,7 +110,7 @@ export const SecaoInicio: React.FC = () => {
             {/* Descrição */}
             <motion.div variants={animacaoItem} className="space-y-4">
               <p className="text-lg leading-relaxed">
-                Desenvolvimento de Software | <br></br>Automação de Processos
+                Desenvolvedora de Software com foco em Automação de Processos.
               </p>
               <p className="text-muted-foreground">
                 Apaixonada por tecnologia, atuo com foco em desenvolvimento de software e automação de processos, ajudando empresas a otimizar operações e ganhar eficiência.
