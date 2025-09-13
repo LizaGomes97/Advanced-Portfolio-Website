@@ -38,12 +38,12 @@ Para rodar este projeto no seu ambiente de desenvolvimento, siga os passos abaix
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/LizaGomes97/Meu_portifolio.git](https://github.com/LizaGomes97/Meu_portifolio.git)
+    git clone https://github.com/LizaGomes97/Advanced-Portfolio-Website.git
     ```
 
 2.  **Navegue até o diretório:**
     ```bash
-    cd Meu_portifolio
+    cd Advanced-Portfolio-Website
     ```
 
 3.  **Instale as dependências:**
