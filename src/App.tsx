@@ -14,6 +14,8 @@ import { SecaoHabilidades } from './components/SecaoHabilidades';
 import { SecaoCertificados } from './components/SecaoCertificados';
 import { SecaoContato } from './components/SecaoContato';
 
+import { ChatWidget } from './components/ChatWidget';
+
 // Componente principal do portfólio
 const PortfolioApp: React.FC = () => {
   const [mostrarBotaoTopo, setMostrarBotaoTopo] = useState(false);
@@ -159,6 +161,7 @@ const PortfolioApp: React.FC = () => {
           <ArrowUp size={24} />
         </motion.button>
       )}
+      <ChatWidget />
     </div>
   );
 };
