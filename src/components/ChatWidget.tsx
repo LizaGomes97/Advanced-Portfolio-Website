@@ -15,17 +15,6 @@ interface Message {
   timestamp: Date;
 }
 
-const AI_RESPONSES = [
-  "Olá! Como posso ajudá-lo hoje?",
-  "Entendo sua pergunta. Deixe-me pensar em uma resposta adequada.",
-  "Essa é uma questão interessante! Posso explicar isso melhor.",
-  "Fico feliz em poder ajudar! Há mais alguma coisa que gostaria de saber?",
-  "Claro! Vou fazer o meu melhor para esclarecer isso para você.",
-  "Obrigado por sua pergunta. Aqui está o que posso compartilhar sobre isso.",
-  "Essa é uma ótima pergunta! Vou explicar passo a passo.",
-  "Posso ajudar com isso. Deixe-me fornecer algumas informações úteis."
-];
-
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -57,7 +46,7 @@ export function ChatWidget() {
     if (isOpen && messages.length === 0) {
       const welcomeMessage: Message = {
         id: Date.now().toString(),
-        text: "Olá! Sou seu assistente virtual. Como posso ajudá-lo hoje?",
+        text: "Olá! Sou a assistente virtual da Lizandra. Como posso te ajudar hoje?",
         isUser: false,
         timestamp: new Date()
       };
@@ -76,28 +65,51 @@ export function ChatWidget() {
     };
 
     setMessages(prev => [...prev, userMessage]);
+    const currentInputValue = inputValue;
     setInputValue("");
     setIsTyping(true);
 
-    // Simulate AI response
-    setTimeout(() => {
-      const randomResponse = AI_RESPONSES[Math.floor(Math.random() * AI_RESPONSES.length)];
+    try {
+      const response = await fetch("http://127.0.0.1:8000/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ pergunta: currentInputValue }),
+      });
+
+      if (!response.ok) {
+        throw new Error("A resposta da rede não foi 'ok'.");
+      }
+
+      const data = await response.json();
+
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: randomResponse,
+        text: data.resposta || "Desculpe, não consegui processar sua pergunta.",
         isUser: false,
         timestamp: new Date()
       };
 
       setMessages(prev => [...prev, aiMessage]);
-      setIsTyping(false);
 
-      // If chat is closed, increment unread count
       if (!isOpen) {
         setUnreadCount(prev => prev + 1);
       }
-    }, 1000 + Math.random() * 2000); // Random delay between 1-3 seconds
+    } catch (error) {
+      console.error("Falha ao buscar a resposta da IA:", error);
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        text: "Desculpe, estou com problemas para me conectar. Tente novamente mais tarde.",
+        isUser: false,
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsTyping(false);
+    }
   };
+
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {

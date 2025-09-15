@@ -50,7 +50,7 @@ const PortfolioApp: React.FC = () => {
       <MenuLateral secaoAtiva={secaoAtiva} />
 
       {/* Conteúdo principal */}
-      <main className="lg:ml-80">
+      <main className="lg:ml-80 pb-32">
         {/* Seção Início */}
         <SecaoInicio />
         
