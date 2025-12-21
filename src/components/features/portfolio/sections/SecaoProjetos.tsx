@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { ImageWithFallback } from "../../../shared/ImageWithFallback";
 import { ModalProjeto, DadosProjeto } from "../modals/ModalProjeto";
 import projetosData from "../../../../data/projetos.json";
-import { SnowBackground } from "../../../themes/SnowBackground";
+import { SnowBackground } from "../../themes/SnowBackground";
 
 // Componente da seção de projetos
 export const SecaoProjetos: React.FC = () => {

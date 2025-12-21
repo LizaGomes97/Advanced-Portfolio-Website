@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Code, Database, Smartphone, Globe, Server, Palette } from 'lucide-react';
-import { SnowBackground } from '../../../themes/SnowBackground';
+import { SnowBackground } from '../../themes/SnowBackground';
 
 // Tipo para habilidade
 interface Habilidade {
