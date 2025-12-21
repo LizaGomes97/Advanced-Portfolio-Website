@@ -1,0 +1,33 @@
+[
+  {
+    "id": "1",
+    "titulo": "E-commerce Tabacaria",
+    "descricao": "Plataforma completa de e-commerce com HTML, Python e CSS",
+    "descricaoCompleta": "Estrutura inicial de um site e-commerce para comercialização de itens de tabacaria. Utilizei o Django para facilitar a introdução do usuário admin para configuração e atualização do site.",
+    "tecnologias": ["HTML", "Python", "CSS"],
+    "imagem": "https://i.imgur.com/vgSH4s7.png",
+    "linkGithub": "https://github.com/LizaGomes97/tabacaria_oriente",
+    "linkDemo": "https://github.com/LizaGomes97/tabacaria_oriente"
+  },
+  {
+    "id": "2",
+    "titulo": "ChatBot Whatsapp",
+    "descricao": "Bot para autoatendimento",
+    "descricaoCompleta": "Automação de atendimento com triagem inteligente. O bot realizava a saudação inicial ao cliente e posteriormente perguntava se o mesmo gostaria de informar o CPF, de acordo com a resposta ele prosseguia o atendimento seguindo o caminho esperado até o momento de passar o atendimento para uma pessoa física.",
+    "tecnologias": ["Python"],
+    "imagem": "https://i.imgur.com/SCDcxNF.png",
+    "linkGithub": "https://github.com/LizaGomes97/ChatBot",
+    "linkDemo": "https://github.com/LizaGomes97/ChatBot"
+  },
+  {
+    "id": "3",
+    "titulo": "Chatbot de Counter Strike",
+    "descricao": "Dashboard interativo para visualização de dados e métricas em tempo real.",
+    "descricaoCompleta": "Chat criado para fãs do jogo obterem informações sobre mapas, armas e outras modalidades. Foi desenvolvido como parte de um desafio da Furia.",
+    "tecnologias": ["Python", "CSS", "HTML", "JavaScript", "Dockerfile"],
+    "imagem": "https://i.imgur.com/u3AfGNG.png",
+    "linkGithub": "https://github.com/LizaGomes97/CS_chatbot",
+    "linkDemo": "https://cs-chatbot-cool-flower-8000.fly.dev/"
+  }
+]
+

@@ -63,7 +63,7 @@ export const MenuLateral: React.FC<MenuLateralProps> = ({ secaoAtiva }) => {
       {/* Botão hambúrguer mobile */}
       <button
         onClick={() => setMenuAberto(!menuAberto)}
-        className="fixed top-4 left-4 z-50 p-2 bg-primary text-primary-foreground rounded-lg shadow-lg lg:hidden"
+        className="fixed top-4 left-4 z-50 p-2 bg-primary text-primary-foreground rounded-lg shadow-lg lg:hidden cursor-pointer"
         aria-label="Abrir menu"
       >
         {menuAberto ? <X size={24} /> : <Menu size={24} />}
@@ -90,7 +90,7 @@ export const MenuLateral: React.FC<MenuLateralProps> = ({ secaoAtiva }) => {
             <h2 className="text-xl font-semibold">Portfolio</h2>
             <button
               onClick={alternarTema}
-              className="p-2 rounded-lg hover:bg-accent transition-colors"
+              className="p-2 rounded-lg hover:bg-accent transition-colors cursor-pointer"
               aria-label={`Mudar para tema ${tema === 'claro' ? 'escuro' : 'claro'}`}
             >
               {tema === 'claro' ? <Moon size={20} /> : <Sun size={20} />}
@@ -111,7 +111,7 @@ export const MenuLateral: React.FC<MenuLateralProps> = ({ secaoAtiva }) => {
                     onClick={() => rolarParaSecao(item.id)}
                     className={`
                       w-full flex items-center gap-3 px-4 py-3 rounded-lg 
-                      transition-all duration-200 text-left
+                      transition-all duration-200 text-left cursor-pointer
                       ${estaAtivo 
                         ? 'bg-primary text-primary-foreground shadow-md' 
                         : 'hover:bg-accent hover:text-accent-foreground'
@@ -135,7 +135,7 @@ export const MenuLateral: React.FC<MenuLateralProps> = ({ secaoAtiva }) => {
             onClick={baixarCurriculo}
             className="w-full flex items-center justify-center gap-2 px-4 py-3 
                      bg-accent text-accent-foreground rounded-lg hover:bg-accent/80 
-                     transition-colors"
+                     transition-colors cursor-pointer"
           >
             <Download size={20} />
             <span>Baixar Currículo</span>
@@ -147,7 +147,7 @@ export const MenuLateral: React.FC<MenuLateralProps> = ({ secaoAtiva }) => {
               href="https://www.linkedin.com/in/lizandra-ribeiro-p-santos/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-lg hover:bg-accent transition-colors"
+              className="p-3 rounded-lg hover:bg-accent transition-colors cursor-pointer"
               aria-label="LinkedIn"
             >
               <Linkedin size={20} />
@@ -156,14 +156,14 @@ export const MenuLateral: React.FC<MenuLateralProps> = ({ secaoAtiva }) => {
               href="https://github.com/LizaGomes97"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-lg hover:bg-accent transition-colors"
+              className="p-3 rounded-lg hover:bg-accent transition-colors cursor-pointer"
               aria-label="GitHub"
             >
               <Github size={20} />
             </a>
             <a
               href="mailto:lizandraplacido@gmail.com"
-              className="p-3 rounded-lg hover:bg-accent transition-colors"
+              className="p-3 rounded-lg hover:bg-accent transition-colors cursor-pointer"
               aria-label="E-mail"
             >
               <Mail size={20} />

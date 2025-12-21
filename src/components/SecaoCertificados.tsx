@@ -4,6 +4,7 @@ import { Award, ExternalLink, Calendar, CheckCircle, ChevronDown } from 'lucide-
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import certificados from '../data/certificados.json';
 import { Button } from './ui/button'; // Importando o componente de botão
+import { SnowBackground } from './SnowBackground';
 
 // Tipo para certificado
 interface Certificado {
@@ -45,8 +46,9 @@ export const SecaoCertificados: React.FC = () => {
   };
 
   return (
-    <section id="certificados" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="certificados" className="py-20 px-6 relative">
+      <SnowBackground />
+      <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Cabeçalho da seção */}
         <motion.div 
@@ -163,7 +165,7 @@ export const SecaoCertificados: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 bg-primary/10 text-primary rounded-lg hover:bg-primary 
-                             hover:text-primary-foreground transition-colors"
+                             hover:text-primary-foreground transition-colors cursor-pointer"
                     aria-label={`Verificar certificado ${certificado.titulo}`}
                   >
                     <ExternalLink size={20} />

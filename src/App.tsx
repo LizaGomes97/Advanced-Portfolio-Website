@@ -95,7 +95,7 @@ const PortfolioApp: React.FC = () => {
                           const elemento = document.getElementById(link.id);
                           elemento?.scrollIntoView({ behavior: 'smooth' });
                         }}
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                       >
                         {link.nome}
                       </button>
@@ -112,7 +112,7 @@ const PortfolioApp: React.FC = () => {
                   <p>
                     <a 
                       href="mailto:lizandraplacido@gmail.com"
-                      className="hover:text-primary transition-colors"
+                      className="hover:text-primary transition-colors cursor-pointer"
                     >
                       lizandraplacido@gmail.com
                     </a>
@@ -120,7 +120,7 @@ const PortfolioApp: React.FC = () => {
                   <p>
                     <a 
                       href="tel:+5511915959763"
-                      className="hover:text-primary transition-colors"
+                      className="hover:text-primary transition-colors cursor-pointer"
                     >
                       +55 (11) 91595-9763
                     </a>

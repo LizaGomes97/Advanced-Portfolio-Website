@@ -84,7 +84,7 @@ export const ModalProjeto: React.FC<ModalProjetoProps> = ({
                 <button
                   onClick={aoFechar}
                   className="absolute top-4 right-4 p-2 bg-black/50 text-white rounded-full 
-                           hover:bg-black/70 transition-colors"
+                           hover:bg-black/70 transition-colors cursor-pointer"
                   aria-label="Fechar modal"
                 >
                   <X size={24} />
@@ -104,7 +104,7 @@ export const ModalProjeto: React.FC<ModalProjetoProps> = ({
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg 
-                               hover:bg-accent transition-colors"
+                               hover:bg-accent transition-colors cursor-pointer"
                     >
                       <Github size={20} />
                       <span>Código</span>
@@ -115,7 +115,7 @@ export const ModalProjeto: React.FC<ModalProjetoProps> = ({
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground 
-                               rounded-lg hover:bg-primary/90 transition-colors"
+                               rounded-lg hover:bg-primary/90 transition-colors cursor-pointer"
                     >
                       <ExternalLink size={20} />
                       <span>Ver Demo</span>
