@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { X, Github, ExternalLink } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import React, { useEffect } from "react";
+import { X, Github, ExternalLink } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { ImageWithFallback } from "../../../shared/ImageWithFallback";
 
 // Tipo para os dados do projeto (atualizado)
 export interface DadosProjeto {
@@ -22,28 +22,27 @@ interface ModalProjetoProps {
 }
 
 // Componente modal para exibir detalhes completos do projeto
-export const ModalProjeto: React.FC<ModalProjetoProps> = ({ 
-  projeto, 
-  estaAberto, 
-  aoFechar 
+export const ModalProjeto: React.FC<ModalProjetoProps> = ({
+  projeto,
+  estaAberto,
+  aoFechar,
 }) => {
-  
   // Fechar modal com tecla ESC
   useEffect(() => {
     const lidarComTecla = (evento: KeyboardEvent) => {
-      if (evento.key === 'Escape') {
+      if (evento.key === "Escape") {
         aoFechar();
       }
     };
 
     if (estaAberto) {
-      document.addEventListener('keydown', lidarComTecla);
-      document.body.style.overflow = 'hidden';
+      document.addEventListener("keydown", lidarComTecla);
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
-      document.removeEventListener('keydown', lidarComTecla);
-      document.body.style.overflow = 'unset';
+      document.removeEventListener("keydown", lidarComTecla);
+      document.body.style.overflow = "unset";
     };
   }, [estaAberto, aoFechar]);
 
@@ -79,12 +78,12 @@ export const ModalProjeto: React.FC<ModalProjetoProps> = ({
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
+
                 {/* Botão fechar */}
                 <button
                   onClick={aoFechar}
                   className="absolute top-4 right-4 p-2 bg-black/50 text-white rounded-full 
-                           hover:bg-black/70 transition-colors"
+                           hover:bg-black/70 transition-colors cursor-pointer"
                   aria-label="Fechar modal"
                 >
                   <X size={24} />
@@ -93,29 +92,28 @@ export const ModalProjeto: React.FC<ModalProjetoProps> = ({
 
               {/* Conteúdo do modal */}
               <div className="p-8 overflow-y-auto max-h-[calc(90vh-15rem)]">
-                
                 {/* Título e links */}
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
                   <h2 className="text-3xl font-bold">{projeto.titulo}</h2>
-                  
+
                   <div className="flex gap-3">
                     <a
                       href={projeto.linkGithub}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg 
-                               hover:bg-accent transition-colors"
+                               hover:bg-accent transition-colors cursor-pointer"
                     >
                       <Github size={20} />
                       <span>Código</span>
                     </a>
-                    
+
                     <a
                       href={projeto.linkDemo}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground 
-                               rounded-lg hover:bg-primary/90 transition-colors"
+                               rounded-lg hover:bg-primary/90 transition-colors cursor-pointer"
                     >
                       <ExternalLink size={20} />
                       <span>Ver Demo</span>
@@ -125,7 +123,9 @@ export const ModalProjeto: React.FC<ModalProjetoProps> = ({
 
                 {/* Descrição completa */}
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-4">Sobre o Projeto</h3>
+                  <h3 className="text-xl font-semibold mb-4">
+                    Sobre o Projeto
+                  </h3>
                   <p className="text-muted-foreground leading-relaxed">
                     {projeto.descricaoCompleta}
                   </p>
@@ -133,7 +133,9 @@ export const ModalProjeto: React.FC<ModalProjetoProps> = ({
 
                 {/* Tecnologias */}
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-4">Tecnologias Utilizadas</h3>
+                  <h3 className="text-xl font-semibold mb-4">
+                    Tecnologias Utilizadas
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {projeto.tecnologias.map((tecnologia, index) => (
                       <span
@@ -145,7 +147,6 @@ export const ModalProjeto: React.FC<ModalProjetoProps> = ({
                     ))}
                   </div>
                 </div>
-
               </div>
             </motion.div>
           </motion.div>

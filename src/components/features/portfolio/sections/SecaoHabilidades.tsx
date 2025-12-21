@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Code, Database, Smartphone, Globe, Server, Palette } from 'lucide-react';
+import { SnowBackground } from '../../../themes/SnowBackground';
 
 // Tipo para habilidade
 interface Habilidade {
@@ -120,8 +121,9 @@ export const SecaoHabilidades: React.FC = () => {
   ];
 
   return (
-    <section id="habilidades" className="py-20 px-6 bg-muted/30">
-      <div className="max-w-6xl mx-auto">
+    <section id="habilidades" className="py-20 px-6 bg-muted/30 relative">
+      <SnowBackground />
+      <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Cabeçalho da seção */}
         <motion.div 
@@ -148,7 +150,7 @@ export const SecaoHabilidades: React.FC = () => {
             <button
               key={categoria.id}
               onClick={() => setCategoriaAtiva(categoria.id)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 ${
+              className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 cursor-pointer ${
                 categoriaAtiva === categoria.id
                   ? 'bg-primary text-primary-foreground shadow-lg scale-105'
                   : 'bg-card text-card-foreground hover:bg-accent border border-border'

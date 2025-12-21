@@ -11,6 +11,7 @@ import {
   CheckCircle,
   AlertCircle
 } from 'lucide-react';
+import { SnowBackground } from '../../../themes/SnowBackground';
 
 // Tipo para dados do formulário
 interface DadosFormulario {
@@ -125,8 +126,9 @@ export const SecaoContato: React.FC = () => {
   };
 
   return (
-    <section id="contato" className="py-20 px-6 bg-muted/30">
-      <div className="max-w-6xl mx-auto">
+    <section id="contato" className="py-20 px-6 bg-muted/30 relative">
+      <SnowBackground />
+      <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Cabeçalho da seção */}
         <motion.div 
@@ -179,7 +181,7 @@ export const SecaoContato: React.FC = () => {
                     <p className="font-medium">Telefone</p>
                     <a 
                       href="tel:+5511915959763" 
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                     >
                       +55 (11) 91595-9763
                     </a>
@@ -207,7 +209,7 @@ export const SecaoContato: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-card border border-border rounded-lg hover:bg-accent 
-                           transition-colors group"
+                           transition-colors group cursor-pointer"
                   aria-label="LinkedIn"
                 >
                   <Linkedin size={24} className="group-hover:text-primary transition-colors" />
@@ -218,7 +220,7 @@ export const SecaoContato: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-card border border-border rounded-lg hover:bg-accent 
-                           transition-colors group"
+                           transition-colors group cursor-pointer"
                   aria-label="GitHub"
                 >
                   <Github size={24} className="group-hover:text-primary transition-colors" />
@@ -380,7 +382,7 @@ export const SecaoContato: React.FC = () => {
                 type="submit"
                 disabled={statusEnvio === 'enviando'}
                 className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg 
-                          transition-all duration-300 ${
+                          transition-all duration-300 cursor-pointer disabled:cursor-not-allowed ${
                   statusEnvio === 'sucesso'
                     ? 'bg-green-500 text-white'
                     : statusEnvio === 'erro'
