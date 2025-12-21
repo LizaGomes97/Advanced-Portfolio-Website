@@ -10,7 +10,7 @@ import {
 import { ImageWithFallback } from "../../../shared/ImageWithFallback";
 import certificados from "../../../../data/certificados.json";
 import { Button } from "../../../../components/ui/button";
-import { SnowBackground } from "../../../themes/SnowBackground";
+import { SnowBackground } from "../../themes/SnowBackground";
 
 // Tipo para certificado
 interface Certificado {
