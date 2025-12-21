@@ -11,7 +11,7 @@ import {
   CheckCircle,
   AlertCircle
 } from 'lucide-react';
-import { SnowBackground } from './SnowBackground';
+import { SnowBackground } from '../../../themes/SnowBackground';
 
 // Tipo para dados do formulário
 interface DadosFormulario {

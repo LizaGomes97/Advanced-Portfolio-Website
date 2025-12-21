@@ -13,7 +13,7 @@ import {
   Linkedin,
   Download
 } from 'lucide-react';
-import { useTema } from '../contexts/TemaContext';
+import { useTema } from '../../../../contexts/TemaContext';
 
 interface MenuLateralProps {
   secaoAtiva: string;

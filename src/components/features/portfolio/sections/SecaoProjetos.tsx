@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Github, ExternalLink, Filter } from "lucide-react";
 import { motion } from "motion/react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { ModalProjeto, DadosProjeto } from "./ModalProjeto";
-import projetosData from "../data/projetos.json";
-import { SnowBackground } from "./SnowBackground";
+import { ImageWithFallback } from "../../../shared/ImageWithFallback";
+import { ModalProjeto, DadosProjeto } from "../modals/ModalProjeto";
+import projetosData from "../../../../data/projetos.json";
+import { SnowBackground } from "../../../themes/SnowBackground";
 
 // Componente da seção de projetos
 export const SecaoProjetos: React.FC = () => {

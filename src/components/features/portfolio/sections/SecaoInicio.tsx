@@ -8,8 +8,8 @@ import {
   Calendar,
 } from "lucide-react";
 import { motion } from "motion/react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { SnowBackground } from "./SnowBackground";
+import { ImageWithFallback } from "../../../shared/ImageWithFallback";
+import { SnowBackground } from "../../../themes/SnowBackground";
 
 // Componente da seção inicial/sobre
 export const SecaoInicio: React.FC = () => {
