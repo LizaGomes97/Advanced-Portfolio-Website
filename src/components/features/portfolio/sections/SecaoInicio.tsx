@@ -73,7 +73,7 @@ export const SecaoInicio: React.FC = () => {
             <div className="relative">
               <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20">
                 <ImageWithFallback
-                  src="public\meu-perfil-natal.png"
+                  src="/meu-perfil-natal.png"
                   alt="Foto de perfil profissional"
                   className="w-full h-full object-cover"
                 />
