@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Send, 
-  Github, 
-  Linkedin, 
+import React, { useState } from "react";
+import { motion } from "motion/react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
   Twitter,
   CheckCircle,
-  AlertCircle
-} from 'lucide-react';
-import { SnowBackground } from '../../themes/SnowBackground';
+  AlertCircle,
+} from "lucide-react";
+import { SnowBackground } from "../../themes/SnowBackground";
 
 // Tipo para dados do formulário
 interface DadosFormulario {
@@ -22,56 +22,61 @@ interface DadosFormulario {
 }
 
 // Tipo para status do envio
-type StatusEnvio = 'idle' | 'enviando' | 'sucesso' | 'erro';
+type StatusEnvio = "idle" | "enviando" | "sucesso" | "erro";
 
 // Componente da seção de contato
 export const SecaoContato: React.FC = () => {
   const [dadosFormulario, setDadosFormulario] = useState<DadosFormulario>({
-    nome: '',
-    email: '',
-    assunto: '',
-    mensagem: ''
+    nome: "",
+    email: "",
+    assunto: "",
+    mensagem: "",
   });
-  
-  const [statusEnvio, setStatusEnvio] = useState<StatusEnvio>('idle');
-  const [errosValidacao, setErrosValidacao] = useState<Partial<DadosFormulario>>({});
+
+  const [statusEnvio, setStatusEnvio] = useState<StatusEnvio>("idle");
+  const [errosValidacao, setErrosValidacao] = useState<
+    Partial<DadosFormulario>
+  >({});
 
   // Validar campo individual
   const validarCampo = (nome: keyof DadosFormulario, valor: string): string => {
     switch (nome) {
-      case 'nome':
-        if (!valor.trim()) return 'Nome é obrigatório';
-        if (valor.trim().length < 2) return 'Nome deve ter pelo menos 2 caracteres';
-        return '';
-      
-      case 'email':
-        if (!valor.trim()) return 'E-mail é obrigatório';
+      case "nome":
+        if (!valor.trim()) return "Nome é obrigatório";
+        if (valor.trim().length < 2)
+          return "Nome deve ter pelo menos 2 caracteres";
+        return "";
+
+      case "email":
+        if (!valor.trim()) return "E-mail é obrigatório";
         const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!regexEmail.test(valor)) return 'E-mail inválido';
-        return '';
-      
-      case 'assunto':
-        if (!valor.trim()) return 'Assunto é obrigatório';
-        if (valor.trim().length < 3) return 'Assunto deve ter pelo menos 3 caracteres';
-        return '';
-      
-      case 'mensagem':
-        if (!valor.trim()) return 'Mensagem é obrigatória';
-        if (valor.trim().length < 10) return 'Mensagem deve ter pelo menos 10 caracteres';
-        return '';
-      
+        if (!regexEmail.test(valor)) return "E-mail inválido";
+        return "";
+
+      case "assunto":
+        if (!valor.trim()) return "Assunto é obrigatório";
+        if (valor.trim().length < 3)
+          return "Assunto deve ter pelo menos 3 caracteres";
+        return "";
+
+      case "mensagem":
+        if (!valor.trim()) return "Mensagem é obrigatória";
+        if (valor.trim().length < 10)
+          return "Mensagem deve ter pelo menos 10 caracteres";
+        return "";
+
       default:
-        return '';
+        return "";
     }
   };
 
   // Lidar com mudanças no formulário
   const lidarComMudanca = (nome: keyof DadosFormulario, valor: string) => {
-    setDadosFormulario(prev => ({ ...prev, [nome]: valor }));
-    
+    setDadosFormulario((prev) => ({ ...prev, [nome]: valor }));
+
     // Validar campo em tempo real
     const erro = validarCampo(nome, valor);
-    setErrosValidacao(prev => ({ ...prev, [nome]: erro }));
+    setErrosValidacao((prev) => ({ ...prev, [nome]: erro }));
   };
 
   // Validar formulário completo
@@ -79,13 +84,15 @@ export const SecaoContato: React.FC = () => {
     const novosErros: Partial<DadosFormulario> = {};
     let formularioValido = true;
 
-    (Object.keys(dadosFormulario) as Array<keyof DadosFormulario>).forEach(campo => {
-      const erro = validarCampo(campo, dadosFormulario[campo]);
-      if (erro) {
-        novosErros[campo] = erro;
-        formularioValido = false;
+    (Object.keys(dadosFormulario) as Array<keyof DadosFormulario>).forEach(
+      (campo) => {
+        const erro = validarCampo(campo, dadosFormulario[campo]);
+        if (erro) {
+          novosErros[campo] = erro;
+          formularioValido = false;
+        }
       }
-    });
+    );
 
     setErrosValidacao(novosErros);
     return formularioValido;
@@ -94,34 +101,33 @@ export const SecaoContato: React.FC = () => {
   // Enviar formulário
   const enviarFormulario = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validarFormulario()) {
       return;
     }
 
-    setStatusEnvio('enviando');
+    setStatusEnvio("enviando");
 
     try {
       // Simular envio do formulário
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
       // Simular sucesso (aqui você integraria com sua API)
-      console.log('Dados do formulário:', dadosFormulario);
-      
-      setStatusEnvio('sucesso');
-      
+      console.log("Dados do formulário:", dadosFormulario);
+
+      setStatusEnvio("sucesso");
+
       // Limpar formulário após sucesso
       setTimeout(() => {
-        setDadosFormulario({ nome: '', email: '', assunto: '', mensagem: '' });
-        setStatusEnvio('idle');
+        setDadosFormulario({ nome: "", email: "", assunto: "", mensagem: "" });
+        setStatusEnvio("idle");
       }, 3000);
-      
     } catch (error) {
-      console.error('Erro ao enviar formulário:', error);
-      setStatusEnvio('erro');
-      
+      console.error("Erro ao enviar formulário:", error);
+      setStatusEnvio("erro");
+
       // Resetar status após 3 segundos
-      setTimeout(() => setStatusEnvio('idle'), 3000);
+      setTimeout(() => setStatusEnvio("idle"), 3000);
     }
   };
 
@@ -129,9 +135,8 @@ export const SecaoContato: React.FC = () => {
     <section id="contato" className="py-20 px-6 bg-muted/30 relative">
       <SnowBackground />
       <div className="max-w-6xl mx-auto relative z-10">
-        
         {/* Cabeçalho da seção */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -139,23 +144,24 @@ export const SecaoContato: React.FC = () => {
         >
           <h2 className="text-4xl font-bold mb-4">Entre em Contato</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Estou sempre aberto para discutir novas oportunidades, projetos interessantes 
-            ou simplesmente trocar ideias sobre tecnologia.
+            Estou sempre aberto para discutir novas oportunidades, projetos
+            interessantes ou simplesmente trocar ideias sobre tecnologia.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          
           {/* Informações de contato */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Informações de Contato</h3>
-              
+              <h3 className="text-2xl font-semibold mb-6">
+                Informações de Contato
+              </h3>
+
               {/* Lista de contatos */}
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
@@ -164,37 +170,39 @@ export const SecaoContato: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-medium">E-mail</p>
-                    <a 
-                      href="mailto:lizandraplacido@gmail.com" 
+                    <a
+                      href="mailto:lizandraplacido@gmail.com"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
                       lizandraplacido@gmail.com
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-primary/10 text-primary rounded-lg">
                     <Phone size={24} />
                   </div>
                   <div>
                     <p className="font-medium">Telefone</p>
-                    <a 
-                      href="tel:+5511915959763" 
+                    <a
+                      href="tel:+5511915959763"
                       className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                     >
                       +55 (11) 91595-9763
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-primary/10 text-primary rounded-lg">
                     <MapPin size={24} />
                   </div>
                   <div>
                     <p className="font-medium">Localização</p>
-                    <p className="text-muted-foreground">São Paulo, SP - Brasil</p>
+                    <p className="text-muted-foreground">
+                      São Paulo, SP - Brasil
+                    </p>
                   </div>
                 </div>
               </div>
@@ -212,9 +220,12 @@ export const SecaoContato: React.FC = () => {
                            transition-colors group cursor-pointer"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin size={24} className="group-hover:text-primary transition-colors" />
+                  <Linkedin
+                    size={24}
+                    className="group-hover:text-primary transition-colors"
+                  />
                 </a>
-                
+
                 <a
                   href="https://github.com/LizaGomes97"
                   target="_blank"
@@ -223,9 +234,12 @@ export const SecaoContato: React.FC = () => {
                            transition-colors group cursor-pointer"
                   aria-label="GitHub"
                 >
-                  <Github size={24} className="group-hover:text-primary transition-colors" />
+                  <Github
+                    size={24}
+                    className="group-hover:text-primary transition-colors"
+                  />
                 </a>
-                
+
                 {/* <a
                   href="https://twitter.com/joaosilva"
                   target="_blank"
@@ -245,48 +259,57 @@ export const SecaoContato: React.FC = () => {
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span>Status:</span>
-                  <span className="text-green-500 font-medium">Disponível para projetos</span>
+                  <span className="text-green-500 font-medium">
+                    Disponível para projetos
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span>Resposta:</span>
-                  <span className="text-muted-foreground">Dentro de 24 horas</span>
+                  <span className="text-muted-foreground">
+                    Dentro de 24 horas
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span>Fuso horário:</span>
-                  <span className="text-muted-foreground">GMT-3 (Brasília)</span>
+                  <span className="text-muted-foreground">
+                    GMT-3 (Brasília)
+                  </span>
                 </div>
               </div>
             </div>
           </motion.div>
 
           {/* Formulário de contato */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="bg-card p-8 rounded-xl shadow-lg border border-border"
           >
             <h3 className="text-2xl font-semibold mb-6">Envie uma Mensagem</h3>
-            
+
             <form onSubmit={enviarFormulario} className="space-y-6">
               {/* Nome */}
               <div>
-                <label htmlFor="nome" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="nome"
+                  className="block text-sm font-medium mb-2"
+                >
                   Nome *
                 </label>
                 <input
                   type="text"
                   id="nome"
                   value={dadosFormulario.nome}
-                  onChange={(e) => lidarComMudanca('nome', e.target.value)}
+                  onChange={(e) => lidarComMudanca("nome", e.target.value)}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary 
-                            focus:border-transparent transition-colors ${
-                    errosValidacao.nome 
-                      ? 'border-red-500 bg-red-50 dark:bg-red-900/20' 
-                      : 'border-border bg-input-background'
-                  }`}
+                            focus:border-transparent transition-colors text-foreground placeholder:text-muted-foreground ${
+                              errosValidacao.nome
+                                ? "border-red-500 bg-red-50 dark:bg-red-900/20 dark:text-foreground"
+                                : "border-border bg-background"
+                            }`}
                   placeholder="Seu nome completo"
-                  disabled={statusEnvio === 'enviando'}
+                  disabled={statusEnvio === "enviando"}
                 />
                 {errosValidacao.nome && (
                   <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
@@ -298,22 +321,25 @@ export const SecaoContato: React.FC = () => {
 
               {/* E-mail */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2"
+                >
                   E-mail *
                 </label>
                 <input
                   type="email"
                   id="email"
                   value={dadosFormulario.email}
-                  onChange={(e) => lidarComMudanca('email', e.target.value)}
+                  onChange={(e) => lidarComMudanca("email", e.target.value)}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary 
-                            focus:border-transparent transition-colors ${
-                    errosValidacao.email 
-                      ? 'border-red-500 bg-red-50 dark:bg-red-900/20' 
-                      : 'border-border bg-input-background'
-                  }`}
+                            focus:border-transparent transition-colors text-foreground placeholder:text-muted-foreground ${
+                              errosValidacao.email
+                                ? "border-red-500 bg-red-50 dark:bg-red-900/20 dark:text-foreground"
+                                : "border-border bg-background"
+                            }`}
                   placeholder="seu@email.com"
-                  disabled={statusEnvio === 'enviando'}
+                  disabled={statusEnvio === "enviando"}
                 />
                 {errosValidacao.email && (
                   <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
@@ -325,22 +351,25 @@ export const SecaoContato: React.FC = () => {
 
               {/* Assunto */}
               <div>
-                <label htmlFor="assunto" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="assunto"
+                  className="block text-sm font-medium mb-2"
+                >
                   Assunto *
                 </label>
                 <input
                   type="text"
                   id="assunto"
                   value={dadosFormulario.assunto}
-                  onChange={(e) => lidarComMudanca('assunto', e.target.value)}
+                  onChange={(e) => lidarComMudanca("assunto", e.target.value)}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary 
-                            focus:border-transparent transition-colors ${
-                    errosValidacao.assunto 
-                      ? 'border-red-500 bg-red-50 dark:bg-red-900/20' 
-                      : 'border-border bg-input-background'
-                  }`}
+                            focus:border-transparent transition-colors text-foreground placeholder:text-muted-foreground ${
+                              errosValidacao.assunto
+                                ? "border-red-500 bg-red-50 dark:bg-red-900/20 dark:text-foreground"
+                                : "border-border bg-background"
+                            }`}
                   placeholder="Sobre o que você gostaria de falar?"
-                  disabled={statusEnvio === 'enviando'}
+                  disabled={statusEnvio === "enviando"}
                 />
                 {errosValidacao.assunto && (
                   <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
@@ -352,22 +381,25 @@ export const SecaoContato: React.FC = () => {
 
               {/* Mensagem */}
               <div>
-                <label htmlFor="mensagem" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="mensagem"
+                  className="block text-sm font-medium mb-2"
+                >
                   Mensagem *
                 </label>
                 <textarea
                   id="mensagem"
                   rows={5}
                   value={dadosFormulario.mensagem}
-                  onChange={(e) => lidarComMudanca('mensagem', e.target.value)}
+                  onChange={(e) => lidarComMudanca("mensagem", e.target.value)}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary 
-                            focus:border-transparent transition-colors resize-vertical ${
-                    errosValidacao.mensagem 
-                      ? 'border-red-500 bg-red-50 dark:bg-red-900/20' 
-                      : 'border-border bg-input-background'
-                  }`}
+                            focus:border-transparent transition-colors resize-vertical text-foreground placeholder:text-muted-foreground ${
+                              errosValidacao.mensagem
+                                ? "border-red-500 bg-red-50 dark:bg-red-900/20 dark:text-foreground"
+                                : "border-border bg-background"
+                            }`}
                   placeholder="Conte-me mais sobre seu projeto ou ideia..."
-                  disabled={statusEnvio === 'enviando'}
+                  disabled={statusEnvio === "enviando"}
                 />
                 {errosValidacao.mensagem && (
                   <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
@@ -380,36 +412,36 @@ export const SecaoContato: React.FC = () => {
               {/* Botão de envio */}
               <button
                 type="submit"
-                disabled={statusEnvio === 'enviando'}
+                disabled={statusEnvio === "enviando"}
                 className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg 
                           transition-all duration-300 cursor-pointer disabled:cursor-not-allowed ${
-                  statusEnvio === 'sucesso'
-                    ? 'bg-green-500 text-white'
-                    : statusEnvio === 'erro'
-                    ? 'bg-red-500 text-white'
-                    : statusEnvio === 'enviando'
-                    ? 'bg-primary/50 text-primary-foreground cursor-not-allowed'
-                    : 'bg-primary text-primary-foreground hover:bg-primary/90'
-                }`}
+                            statusEnvio === "sucesso"
+                              ? "bg-green-500 text-white"
+                              : statusEnvio === "erro"
+                              ? "bg-red-500 text-white"
+                              : statusEnvio === "enviando"
+                              ? "bg-primary/50 text-primary-foreground cursor-not-allowed"
+                              : "bg-primary text-primary-foreground hover:bg-primary/90"
+                          }`}
               >
-                {statusEnvio === 'enviando' && (
+                {statusEnvio === "enviando" && (
                   <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 )}
-                {statusEnvio === 'sucesso' && <CheckCircle size={20} />}
-                {statusEnvio === 'erro' && <AlertCircle size={20} />}
-                {statusEnvio === 'idle' && <Send size={20} />}
-                
+                {statusEnvio === "sucesso" && <CheckCircle size={20} />}
+                {statusEnvio === "erro" && <AlertCircle size={20} />}
+                {statusEnvio === "idle" && <Send size={20} />}
+
                 <span>
-                  {statusEnvio === 'enviando' && 'Enviando...'}
-                  {statusEnvio === 'sucesso' && 'Mensagem Enviada!'}
-                  {statusEnvio === 'erro' && 'Erro ao Enviar'}
-                  {statusEnvio === 'idle' && 'Enviar Mensagem'}
+                  {statusEnvio === "enviando" && "Enviando..."}
+                  {statusEnvio === "sucesso" && "Mensagem Enviada!"}
+                  {statusEnvio === "erro" && "Erro ao Enviar"}
+                  {statusEnvio === "idle" && "Enviar Mensagem"}
                 </span>
               </button>
 
               {/* Mensagem de sucesso/erro */}
-              {statusEnvio === 'sucesso' && (
-                <motion.div 
+              {statusEnvio === "sucesso" && (
+                <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg"
@@ -420,14 +452,15 @@ export const SecaoContato: React.FC = () => {
                 </motion.div>
               )}
 
-              {statusEnvio === 'erro' && (
-                <motion.div 
+              {statusEnvio === "erro" && (
+                <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg"
                 >
                   <p className="text-red-700 dark:text-red-300 text-sm">
-                    Ocorreu um erro ao enviar sua mensagem. Tente novamente ou entre em contato diretamente.
+                    Ocorreu um erro ao enviar sua mensagem. Tente novamente ou
+                    entre em contato diretamente.
                   </p>
                 </motion.div>
               )}

@@ -1,0 +1,178 @@
+{
+  "categorias": [
+    { "id": "frontend", "label": "Frontend", "icone": "globe" },
+    { "id": "backend", "label": "Backend", "icone": "server" },
+    { "id": "ia", "label": "IA", "icone": "brain" },
+    { "id": "devops", "label": "DevOps", "icone": "database" }
+  ],
+  "habilidades": [
+    {
+      "id": "1",
+      "nome": "React / Next.js",
+      "nivel": 60,
+      "categoria": "frontend",
+      "icone": "code",
+      "descricao": "Criação de SPAs e aplicações fullstack com React Hooks, Context API e Next.js para renderização híbrida (SSR/SSG)."
+    },
+    {
+      "id": "2",
+      "nome": "TypeScript",
+      "nivel": 45,
+      "categoria": "frontend",
+      "icone": "code",
+      "descricao": "Desenvolvimento seguro com tipagem estática, interfaces, generics e inferência de tipos para código mais robusto."
+    },
+    {
+      "id": "3",
+      "nome": "HTML5 / CSS3",
+      "nivel": 75,
+      "categoria": "frontend",
+      "icone": "globe",
+      "descricao": "Estruturação semântica, layouts modernos com Grid/Flexbox, animações fluidas e práticas de acessibilidade web."
+    },
+    {
+      "id": "4",
+      "nome": "Tailwind CSS",
+      "nivel": 68,
+      "categoria": "frontend",
+      "icone": "palette",
+      "descricao": "Estilização ágil com classes utilitárias, design systems customizados e interfaces responsivas de alta qualidade."
+    },
+    {
+      "id": "5",
+      "nome": "Vue.js",
+      "nivel": 30,
+      "categoria": "frontend",
+      "icone": "code",
+      "descricao": "Framework progressivo para construção de interfaces reativas com componentes reutilizáveis e Composition API."
+    },
+    {
+      "id": "6",
+      "nome": "Angular",
+      "nivel": 30,
+      "categoria": "frontend",
+      "icone": "code",
+      "descricao": "Framework enterprise da Google para aplicações escaláveis com TypeScript, injeção de dependências e módulos."
+    },
+    {
+      "id": "7",
+      "nome": "React Native",
+      "nivel": 30,
+      "categoria": "frontend",
+      "icone": "smartphone",
+      "descricao": "Desenvolvimento de apps móveis multiplataforma (iOS/Android) com código JavaScript/React compartilhado."
+    },
+    {
+      "id": "8",
+      "nome": "Node.js",
+      "nivel": 70,
+      "categoria": "backend",
+      "icone": "server",
+      "descricao": "Construção de APIs REST escaláveis, microserviços e aplicações real-time com Express, Fastify e WebSockets."
+    },
+    {
+      "id": "9",
+      "nome": "Python",
+      "nivel": 80,
+      "categorias": ["backend", "ia"],
+      "icone": "code",
+      "descricao": "Linguagem versátil para APIs (Django/Flask), automação, análise de dados, machine learning e integração com LLMs."
+    },
+    {
+      "id": "10",
+      "nome": ".NET",
+      "nivel": 70,
+      "categoria": "backend",
+      "icone": "server",
+      "descricao": "Desenvolvimento de APIs robustas com C#, ASP.NET Core, Entity Framework e arquitetura orientada a serviços."
+    },
+    {
+      "id": "11",
+      "nome": "SQL",
+      "nivel": 70,
+      "categoria": "backend",
+      "icone": "database",
+      "descricao": "Modelagem relacional, queries complexas, stored procedures, otimização de performance e migrations de banco."
+    },
+    {
+      "id": "12",
+      "nome": "PostgreSQL",
+      "nivel": 30,
+      "categoria": "backend",
+      "icone": "database",
+      "descricao": "SGBD avançado com suporte a JSON, índices especializados, particionamento e alta disponibilidade."
+    },
+    {
+      "id": "13",
+      "nome": "NoSQL",
+      "nivel": 70,
+      "categoria": "backend",
+      "icone": "database",
+      "descricao": "Bancos não-relacionais como MongoDB e Redis para dados flexíveis, cache e alta escalabilidade horizontal."
+    },
+    {
+      "id": "14",
+      "nome": "Swagger / OpenAPI",
+      "nivel": 70,
+      "categoria": "backend",
+      "icone": "code",
+      "descricao": "Documentação interativa de APIs REST, geração automática de specs e contratos para integração de equipes."
+    },
+    {
+      "id": "15",
+      "nome": "Postman",
+      "nivel": 70,
+      "categoria": "backend",
+      "icone": "code",
+      "descricao": "Testes e validação de APIs, criação de collections, automação de testes e documentação colaborativa."
+    },
+    {
+      "id": "16",
+      "nome": "Git / GitHub",
+      "nivel": 92,
+      "categoria": "devops",
+      "icone": "code",
+      "descricao": "Controle de versão avançado, Git Flow, Pull Requests, code review e automação com GitHub Actions."
+    },
+    {
+      "id": "17",
+      "nome": "Docker",
+      "nivel": 30,
+      "categoria": "devops",
+      "icone": "server",
+      "descricao": "Containerização de aplicações, criação de imagens otimizadas e orquestração com Docker Compose."
+    },
+    {
+      "id": "18",
+      "nome": "AWS",
+      "nivel": 30,
+      "categoria": "devops",
+      "icone": "server",
+      "descricao": "Infraestrutura cloud com EC2, S3, Lambda, RDS e pipelines de CI/CD para deploy automatizado."
+    },
+    {
+      "id": "19",
+      "nome": "Google AI Studio",
+      "nivel": 70,
+      "categoria": "ia",
+      "icone": "brain",
+      "descricao": "Prototipagem rápida com Gemini, fine-tuning de modelos e integração de IA generativa em aplicações."
+    },
+    {
+      "id": "20",
+      "nome": "OpenAI API",
+      "nivel": 70,
+      "categoria": "ia",
+      "icone": "brain",
+      "descricao": "Integração com GPT-4, embeddings, assistentes personalizados e automação inteligente via API."
+    },
+    {
+      "id": "21",
+      "nome": "LangChain",
+      "nivel": 70,
+      "categoria": "ia",
+      "icone": "brain",
+      "descricao": "Orquestração de LLMs, criação de agentes autônomos, RAG com vetores e chains para fluxos complexos de IA."
+    }
+  ]
+}

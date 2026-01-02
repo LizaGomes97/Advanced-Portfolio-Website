@@ -10,9 +10,14 @@ import {
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../../../shared/ImageWithFallback";
 import { SnowBackground } from "../../themes/SnowBackground";
+import { deveExibirEfeitoNatal } from "../../../../utils/natalUtils";
 
 // Componente da seção inicial/sobre
 export const SecaoInicio: React.FC = () => {
+  // Verifica se deve exibir versão de natal
+  const isNatal = deveExibirEfeitoNatal();
+  const fotoPerfil = isNatal ? "/meu-perfil-natal.png" : "/meu-perfil.png";
+
   // Função para baixar o currículo em PDF
   const baixarCurriculo = () => {
     const googleDocUrl =
@@ -73,7 +78,7 @@ export const SecaoInicio: React.FC = () => {
             <div className="relative">
               <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20">
                 <ImageWithFallback
-                  src="/meu-perfil-natal.png"
+                  src={fotoPerfil}
                   alt="Foto de perfil profissional"
                   className="w-full h-full object-cover"
                 />

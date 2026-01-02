@@ -244,8 +244,8 @@ export const SecaoCertificados: React.FC = () => {
             práticas do mercado.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-            <span>📚 Próxima meta: Totvs Protheus</span>
-            <span>🎯 Meta 2026: Inglês Avançado</span>
+            <span>🎯 Foco principal: Atutomatização de processos</span>
+            <span>✅ Meta 2026: Inglês Intermediário</span>
           </div>
         </motion.div>
       </div>

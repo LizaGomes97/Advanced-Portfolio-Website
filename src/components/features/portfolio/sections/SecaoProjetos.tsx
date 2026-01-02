@@ -20,19 +20,22 @@ export const SecaoProjetos: React.FC = () => {
   const categorias = [
     { id: "todos", label: "Todos os Projetos" },
     { id: "web", label: "Web Development" },
-    { id: "mobile", label: "Mobile Apps" },
+    { id: "ia", label: "IA Development" },
     { id: "bots", label: "Bot's" },
+    { id: "softwares", label: "Softwares" },
   ];
 
   // Filtrar projetos baseado na categoria
   const projetosFiltrados = projetos.filter((projeto) => {
     if (filtroAtivo === "todos") return true;
     if (filtroAtivo === "web")
-      return projeto.tecnologias.some((tech) => ["HTML", "CSS"].includes(tech));
-    if (filtroAtivo === "mobile")
-      return projeto.tecnologias.includes("React Native");
+      return projeto.tecnologias.some((tech) => ["HTML", "CSS", "Tailwind CSS"].includes(tech));
+    if (filtroAtivo === "ia")
+      return projeto.tecnologias.includes("IA, LangChain, OpenAI");
     if (filtroAtivo === "bots")
       return projeto.titulo.toLowerCase().includes("bot");
+    if (filtroAtivo === "softwares")
+      return projeto.titulo.toLowerCase().includes("software") || projeto.titulo.toLowerCase().includes("app");
     return true;
   });
 

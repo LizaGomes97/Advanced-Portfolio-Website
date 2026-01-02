@@ -1,19 +1,26 @@
 [
   {
-    "id": "1",
-    "titulo": "E-commerce Tabacaria",
-    "descricao": "Plataforma completa de e-commerce com HTML, Python e CSS",
-    "descricaoCompleta": "Estrutura inicial de um site e-commerce para comercialização de itens de tabacaria. Utilizei o Django para facilitar a introdução do usuário admin para configuração e atualização do site.",
-    "tecnologias": ["HTML", "Python", "CSS"],
-    "imagem": "https://i.imgur.com/vgSH4s7.png",
-    "linkGithub": "https://github.com/LizaGomes97/tabacaria_oriente",
-    "linkDemo": "https://github.com/LizaGomes97/tabacaria_oriente"
+    "id": "0",
+    "titulo": "Site corporativo",
+    "descricao": "Plataforma web moderna desenvolvida com Angular e .NET, oferecendo uma experiência completa para apresentação de empresa, portfólio de produtos e serviços.",
+    "descricaoCompleta": "Site corporativo profissional desenvolvido com arquitetura full-stack utilizando Angular no frontend e .NET no backend. A aplicação apresenta design responsivo e moderno com Tailwind CSS, garantindo uma excelente experiência em todos os dispositivos. Implementa gerenciamento de dados robusto através de bancos de dados relacionais (SQL) e não relacionais (NoSQL), permitindo armazenamento flexível e eficiente de diferentes tipos de conteúdo. A solução oferece uma interface intuitiva para apresentação da empresa, catálogo de produtos e informações sobre serviços, com foco em performance e usabilidade.",
+    "tecnologias": [
+      "Angular",
+      "TypeScript",
+      "Tailwind CSS",
+      ".NET",
+      "SQL",
+      "NoSQL"
+    ],
+    "imagem": "src/assets/images/site.png",
+    "linkGithub": "Codigo Fechado",
+    "linkDemo": "Codigo Fechado"
   },
   {
     "id": "2",
     "titulo": "ChatBot Whatsapp",
-    "descricao": "Bot para autoatendimento",
-    "descricaoCompleta": "Automação de atendimento com triagem inteligente. O bot realizava a saudação inicial ao cliente e posteriormente perguntava se o mesmo gostaria de informar o CPF, de acordo com a resposta ele prosseguia o atendimento seguindo o caminho esperado até o momento de passar o atendimento para uma pessoa física.",
+    "descricao": "Sistema inteligente de autoatendimento para WhatsApp desenvolvido em Python, automatizando a triagem inicial de clientes e otimizando o fluxo de atendimento.",
+    "descricaoCompleta": "Chatbot avançado para WhatsApp desenvolvido em Python, implementando um sistema de autoatendimento com triagem inteligente. O bot executa uma saudação personalizada aos clientes e conduz uma conversa estruturada, solicitando informações relevantes como CPF conforme necessário. O sistema utiliza fluxos de conversação dinâmicos que se adaptam às respostas do usuário, direcionando o atendimento através de caminhos pré-definidos até identificar a necessidade de escalação para um atendente humano. Esta solução reduz significativamente o tempo de resposta inicial e melhora a eficiência do atendimento ao cliente, garantindo que questões complexas sejam direcionadas apropriadamente.",
     "tecnologias": ["Python"],
     "imagem": "https://i.imgur.com/SCDcxNF.png",
     "linkGithub": "https://github.com/LizaGomes97/ChatBot",
@@ -22,12 +29,41 @@
   {
     "id": "3",
     "titulo": "Chatbot de Counter Strike",
-    "descricao": "Dashboard interativo para visualização de dados e métricas em tempo real.",
-    "descricaoCompleta": "Chat criado para fãs do jogo obterem informações sobre mapas, armas e outras modalidades. Foi desenvolvido como parte de um desafio da Furia.",
+    "descricao": "Chatbot interativo desenvolvido para comunidade de Counter Strike, oferecendo informações detalhadas sobre mapas, armas, estratégias e modalidades do jogo.",
+    "descricaoCompleta": "Chatbot especializado desenvolvido para a comunidade de Counter Strike, criado como parte de um desafio técnico da Furia. A aplicação oferece uma interface web interativa construída com HTML, CSS e JavaScript, permitindo que fãs do jogo consultem informações detalhadas sobre mapas, armas, estatísticas e diferentes modalidades de jogo. O backend em Python processa as consultas e retorna respostas contextualizadas. O projeto foi containerizado com Dockerfile, facilitando o deploy e garantindo portabilidade. A solução está hospedada e acessível publicamente, demonstrando funcionalidades avançadas de processamento de linguagem natural aplicadas ao universo gaming.",
     "tecnologias": ["Python", "CSS", "HTML", "JavaScript", "Dockerfile"],
     "imagem": "https://i.imgur.com/u3AfGNG.png",
     "linkGithub": "https://github.com/LizaGomes97/CS_chatbot",
     "linkDemo": "https://cs-chatbot-cool-flower-8000.fly.dev/"
+  },
+  {
+    "id": "4",
+    "titulo": "APP Interpretador de dados extraidos do espectometro XRF",
+    "descricao": "Interpretador de dados extraidos do espectometro XRF, dados extraidos do espectometro XRF e melhorias.",
+    "descricaoCompleta": "Interpretador de dados extraidos do espectometro XRF, dados extraidos do espectometro XRF e melhorias.",
+    "tecnologias": ["Python",".NET", "React"],
+    "imagem": "src/assets/images/espectometro.jpeg",
+    "linkGithub": "Codigo Fechado",
+    "linkDemo": "Codigo Fechado"
+  },
+  {
+    "id": "5",
+    "titulo": "Agente de inteligência artificial treinado para replicar código",
+    "descricao": "Agente de IA desenvolvido com LangChain e OpenAI, capaz de analisar, compreender e replicar código-fonte através de integração com repositórios GitHub.",
+    "descricaoCompleta": "Sistema avançado de inteligência artificial desenvolvido utilizando LangChain e APIs da OpenAI, projetado para analisar, compreender e replicar código-fonte de diferentes projetos. O agente integra-se com a API do GitHub para acessar repositórios, analisar estruturas de código e aprender padrões de programação. Utilizando processamento de linguagem natural e técnicas de análise de código, o sistema é capaz de entender a lógica e estrutura de projetos existentes e gerar implementações similares. A solução demonstra aplicações práticas de IA generativa no contexto de desenvolvimento de software, oferecendo capacidades de automação e assistência na criação de código baseado em exemplos existentes.",
+    "tecnologias": ["Python", "LangChain", "OpenAI", "GitHub"],
+    "imagem": "src/assets/images/embeddings.png",
+    "linkGithub": "Codigo Fechado",
+    "linkDemo": "Codigo Fechado"
+  },
+  {
+    "id": "6",
+    "titulo": "Software de criação de formulas complexas com base em dados de entrada",
+    "descricao": "Sistema inteligente desenvolvido com IA que analisa dados de entrada e gera automaticamente fórmulas matemáticas e lógicas complexas, utilizando LangChain e OpenAI para processamento avançado.",
+    "descricaoCompleta": "Sistema inteligente desenvolvido em Python que utiliza tecnologias de inteligência artificial (LangChain e OpenAI) para criar fórmulas complexas baseadas em dados de entrada. A aplicação analisa padrões nos dados fornecidos, compreende relações matemáticas e lógicas, e gera automaticamente fórmulas otimizadas para processamento e cálculo. O sistema integra-se com repositórios GitHub para versionamento e compartilhamento de fórmulas geradas. Esta solução é especialmente útil para áreas como análise de dados, modelagem matemática, engenharia e ciências, onde é necessário criar expressões complexas que processem grandes volumes de informações de forma eficiente e precisa.",
+    "tecnologias": ["Python", "LangChain", "OpenAI", "GitHub"],
+    "imagem": "src/assets/images/gerador_concatenacao.jpeg",
+    "linkGithub": "Codigo Fechado",
+    "linkDemo": "Codigo Fechado"
   }
 ]
-
