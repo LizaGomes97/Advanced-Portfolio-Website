@@ -1,7 +1,13 @@
-import React, { useEffect } from "react";
-import { X, Github, ExternalLink } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { X, Github, ExternalLink, Lock } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { ImageWithFallback } from "../../../shared/ImageWithFallback";
+
+// Verifica se o link é código fechado
+const isCodigoFechado = (link: string) => {
+  return link.toLowerCase().includes("codigo fechado") || 
+         link.toLowerCase().includes("código fechado");
+};
 
 // Tipo para os dados do projeto (atualizado)
 export interface DadosProjeto {
@@ -27,6 +33,14 @@ export const ModalProjeto: React.FC<ModalProjetoProps> = ({
   estaAberto,
   aoFechar,
 }) => {
+  const [notificacao, setNotificacao] = useState<string | null>(null);
+
+  // Mostrar notificação de código fechado
+  const mostrarNotificacaoCodigoFechado = () => {
+    setNotificacao("Este código pertence a uma instituição privada e não pode ser compartilhado publicamente.");
+    setTimeout(() => setNotificacao(null), 4000);
+  };
+
   // Fechar modal com tecla ESC
   useEffect(() => {
     const lidarComTecla = (evento: KeyboardEvent) => {
@@ -97,27 +111,49 @@ export const ModalProjeto: React.FC<ModalProjetoProps> = ({
                   <h2 className="text-3xl font-bold">{projeto.titulo}</h2>
 
                   <div className="flex gap-3">
-                    <a
-                      href={projeto.linkGithub}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg 
-                               hover:bg-accent transition-colors cursor-pointer"
-                    >
-                      <Github size={20} />
-                      <span>Código</span>
-                    </a>
+                    {isCodigoFechado(projeto.linkGithub) ? (
+                      <button
+                        onClick={mostrarNotificacaoCodigoFechado}
+                        className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg 
+                                 hover:bg-accent transition-colors cursor-pointer"
+                      >
+                        <Lock size={20} />
+                        <span>Código Privado</span>
+                      </button>
+                    ) : (
+                      <a
+                        href={projeto.linkGithub}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg 
+                                 hover:bg-accent transition-colors cursor-pointer"
+                      >
+                        <Github size={20} />
+                        <span>Código</span>
+                      </a>
+                    )}
 
-                    <a
-                      href={projeto.linkDemo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground 
-                               rounded-lg hover:bg-primary/90 transition-colors cursor-pointer"
-                    >
-                      <ExternalLink size={20} />
-                      <span>Ver Demo</span>
-                    </a>
+                    {isCodigoFechado(projeto.linkDemo) ? (
+                      <button
+                        onClick={mostrarNotificacaoCodigoFechado}
+                        className="flex items-center gap-2 px-4 py-2 bg-muted text-muted-foreground 
+                                 rounded-lg hover:bg-muted/80 transition-colors cursor-pointer"
+                      >
+                        <Lock size={20} />
+                        <span>Demo Privada</span>
+                      </button>
+                    ) : (
+                      <a
+                        href={projeto.linkDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground 
+                                 rounded-lg hover:bg-primary/90 transition-colors cursor-pointer"
+                      >
+                        <ExternalLink size={20} />
+                        <span>Ver Demo</span>
+                      </a>
+                    )}
                   </div>
                 </div>
 
@@ -148,6 +184,47 @@ export const ModalProjeto: React.FC<ModalProjetoProps> = ({
                   </div>
                 </div>
               </div>
+
+              {/* Notificação de código fechado - Janela flutuante */}
+              <AnimatePresence>
+                {notificacao && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                    transition={{ type: "spring", damping: 20, stiffness: 300 }}
+                    className="absolute bottom-4 left-4 right-4 bg-card border border-border 
+                             rounded-xl shadow-2xl overflow-hidden"
+                  >
+                    {/* Cabeçalho da janela */}
+                    <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 border-b border-border">
+                      <Lock size={16} className="text-primary" />
+                      <span className="font-semibold text-sm">Código Privado</span>
+                      <button 
+                        onClick={() => setNotificacao(null)}
+                        className="ml-auto text-muted-foreground hover:text-foreground transition-colors text-sm"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                    
+                    {/* Conteúdo */}
+                    <div className="px-4 py-3">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {notificacao}
+                      </p>
+                    </div>
+
+                    {/* Barra de progresso */}
+                    <motion.div 
+                      initial={{ width: "100%" }}
+                      animate={{ width: "0%" }}
+                      transition={{ duration: 4, ease: "linear" }}
+                      className="h-1 bg-primary"
+                    />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           </motion.div>
         </>

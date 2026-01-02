@@ -53,15 +53,17 @@ const getIcone = (nomeIcone: string, size: number = 24) => {
 
 // Componente da seção de habilidades
 export const SecaoHabilidades: React.FC = () => {
-  const [categoriaAtiva, setCategoriaAtiva] = useState("frontend");
+  const [categoriaAtiva, setCategoriaAtiva] = useState("todas");
 
   // Dados das categorias do JSON
   const categorias = dadosHabilidades.categorias as CategoriaJSON[];
 
+  // Todas as habilidades do JSON
+  const todasHabilidades = dadosHabilidades.habilidades as HabilidadeJSON[];
+
   // Dados das habilidades organizadas por categoria
-  const habilidades = useMemo(() => {
-    const habilidadesJSON = dadosHabilidades.habilidades as HabilidadeJSON[];
-    return habilidadesJSON.reduce((acc, habilidade) => {
+  const habilidadesPorCategoria = useMemo(() => {
+    return todasHabilidades.reduce((acc, habilidade) => {
       // Suporta tanto 'categoria' (string) quanto 'categorias' (array)
       const cats =
         habilidade.categorias ||
@@ -74,7 +76,15 @@ export const SecaoHabilidades: React.FC = () => {
       });
       return acc;
     }, {} as Record<string, HabilidadeJSON[]>);
-  }, []);
+  }, [todasHabilidades]);
+
+  // Habilidades a serem exibidas (todas ou filtradas por categoria)
+  const habilidadesExibidas = useMemo(() => {
+    if (categoriaAtiva === "todas") {
+      return todasHabilidades;
+    }
+    return habilidadesPorCategoria[categoriaAtiva] || [];
+  }, [categoriaAtiva, todasHabilidades, habilidadesPorCategoria]);
 
   return (
     <section id="habilidades" className="py-20 px-6 bg-muted/30 relative">
@@ -125,7 +135,7 @@ export const SecaoHabilidades: React.FC = () => {
           transition={{ duration: 0.3 }}
           className="grid lg:grid-cols-2 gap-8"
         >
-          {habilidades[categoriaAtiva]?.map((habilidade, index) => (
+          {habilidadesExibidas.map((habilidade, index) => (
             <motion.div
               key={`${categoriaAtiva}-${habilidade.nome}`}
               initial={{ opacity: 0, y: 20 }}
@@ -203,8 +213,10 @@ export const SecaoHabilidades: React.FC = () => {
         >
           <div className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="bg-card p-6 rounded-xl shadow-lg border border-border">
-              <div className="text-3xl font-bold text-primary mb-2">+4 mil</div>
-              <div className="text-muted-foreground">Horas de Desenvolvimento</div>
+              <div className="text-3xl font-bold text-primary mb-2">+4Mil</div>
+              <div className="text-muted-foreground">
+                Horas de Desenvolvimento
+              </div>
             </div>
             <div className="bg-card p-6 rounded-xl shadow-lg border border-border">
               <div className="text-3xl font-bold text-primary mb-2">+20</div>
@@ -212,7 +224,7 @@ export const SecaoHabilidades: React.FC = () => {
             </div>
             <div className="bg-card p-6 rounded-xl shadow-lg border border-border">
               <div className="text-3xl font-bold text-primary mb-2">+10</div>
-              <div className="text-muted-foreground">Projetos Publicados</div>
+              <div className="text-muted-foreground">Anos no mercado</div>
             </div>
           </div>
         </motion.div>

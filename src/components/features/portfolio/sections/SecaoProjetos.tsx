@@ -6,6 +6,14 @@ import { ModalProjeto, DadosProjeto } from "../modals/ModalProjeto";
 import projetosData from "../../../../data/projetos.json";
 import { SnowBackground } from "../../themes/SnowBackground";
 
+// Verifica se o link é código fechado
+const isCodigoFechado = (link: string) => {
+  return (
+    link.toLowerCase().includes("codigo fechado") ||
+    link.toLowerCase().includes("código fechado")
+  );
+};
+
 // Componente da seção de projetos
 export const SecaoProjetos: React.FC = () => {
   const [projetoSelecionado, setProjetoSelecionado] =
@@ -29,13 +37,20 @@ export const SecaoProjetos: React.FC = () => {
   const projetosFiltrados = projetos.filter((projeto) => {
     if (filtroAtivo === "todos") return true;
     if (filtroAtivo === "web")
-      return projeto.tecnologias.some((tech) => ["HTML", "CSS", "Tailwind CSS"].includes(tech));
+      return projeto.tecnologias.some((tech) =>
+        ["HTML", "CSS", "Tailwind CSS"].includes(tech)
+      );
     if (filtroAtivo === "ia")
-      return projeto.tecnologias.includes("IA, LangChain, OpenAI");
+      return projeto.tecnologias.some((tech) =>
+        ["IA", "LangChain", "OpenAI"].includes(tech)
+      );
     if (filtroAtivo === "bots")
       return projeto.titulo.toLowerCase().includes("bot");
     if (filtroAtivo === "softwares")
-      return projeto.titulo.toLowerCase().includes("software") || projeto.titulo.toLowerCase().includes("app");
+      return (
+        projeto.titulo.toLowerCase().includes("software") ||
+        projeto.titulo.toLowerCase().includes("app")
+      );
     return true;
   });
 
@@ -117,32 +132,39 @@ export const SecaoProjetos: React.FC = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
 
-                {/* Overlay com links */}
-                <div
-                  className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 
-                              transition-opacity duration-300 flex items-center justify-center gap-4"
-                >
-                  <a
-                    href={projeto.linkGithub}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="p-3 bg-white/20 backdrop-blur-sm rounded-lg hover:bg-white/30 transition-colors cursor-pointer"
-                    aria-label={`Ver código do projeto ${projeto.titulo} no GitHub`}
+                {/* Overlay com links - só mostra se não for código fechado */}
+                {(!isCodigoFechado(projeto.linkGithub) ||
+                  !isCodigoFechado(projeto.linkDemo)) && (
+                  <div
+                    className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 
+                                transition-opacity duration-300 flex items-center justify-center gap-4"
                   >
-                    <Github size={24} className="text-white" />
-                  </a>
-                  <a
-                    href={projeto.linkDemo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="p-3 bg-white/20 backdrop-blur-sm rounded-lg hover:bg-white/30 transition-colors cursor-pointer"
-                    aria-label={`Ver demo do projeto ${projeto.titulo}`}
-                  >
-                    <ExternalLink size={24} className="text-white" />
-                  </a>
-                </div>
+                    {!isCodigoFechado(projeto.linkGithub) && (
+                      <a
+                        href={projeto.linkGithub}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="p-3 bg-white/20 backdrop-blur-sm rounded-lg hover:bg-white/30 transition-colors cursor-pointer"
+                        aria-label={`Ver código do projeto ${projeto.titulo} no GitHub`}
+                      >
+                        <Github size={24} className="text-white" />
+                      </a>
+                    )}
+                    {!isCodigoFechado(projeto.linkDemo) && (
+                      <a
+                        href={projeto.linkDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="p-3 bg-white/20 backdrop-blur-sm rounded-lg hover:bg-white/30 transition-colors cursor-pointer"
+                        aria-label={`Ver demo do projeto ${projeto.titulo}`}
+                      >
+                        <ExternalLink size={24} className="text-white" />
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Conteúdo do card */}

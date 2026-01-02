@@ -1,5 +1,6 @@
 {
   "categorias": [
+    {"id": "todas", "label": "Todas as Habilidades", "icone": "code"},
     { "id": "frontend", "label": "Frontend", "icone": "globe" },
     { "id": "backend", "label": "Backend", "icone": "server" },
     { "id": "ia", "label": "IA", "icone": "brain" },

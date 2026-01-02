@@ -61,7 +61,7 @@
     "titulo": "Software de criação de formulas complexas com base em dados de entrada",
     "descricao": "Sistema inteligente desenvolvido com IA que analisa dados de entrada e gera automaticamente fórmulas matemáticas e lógicas complexas, utilizando LangChain e OpenAI para processamento avançado.",
     "descricaoCompleta": "Sistema inteligente desenvolvido em Python que utiliza tecnologias de inteligência artificial (LangChain e OpenAI) para criar fórmulas complexas baseadas em dados de entrada. A aplicação analisa padrões nos dados fornecidos, compreende relações matemáticas e lógicas, e gera automaticamente fórmulas otimizadas para processamento e cálculo. O sistema integra-se com repositórios GitHub para versionamento e compartilhamento de fórmulas geradas. Esta solução é especialmente útil para áreas como análise de dados, modelagem matemática, engenharia e ciências, onde é necessário criar expressões complexas que processem grandes volumes de informações de forma eficiente e precisa.",
-    "tecnologias": ["Python", "LangChain", "OpenAI", "GitHub"],
+    "tecnologias": ["Python", "GitHub"],
     "imagem": "/images/gerador_concatenacao.jpeg",
     "linkGithub": "Codigo Fechado",
     "linkDemo": "Codigo Fechado"
